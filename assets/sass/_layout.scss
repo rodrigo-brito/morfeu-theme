@@ -1,0 +1,376 @@
+// ==========================================================================
+// TABLE OF CONTENTS:
+// ==========================================================================
+//
+// # Header
+// 		# Title + description
+// 		# Navbar
+// # Wrapper
+// # Content
+// # Sidebar and Widgets
+// # Components
+// 		# Fancy skip link
+// 		# Pagination
+// 		# Comments
+// # Footer
+//
+
+
+
+
+// ==========================================================================
+// Clearfix
+// ==========================================================================
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+// ==========================================================================
+// Header
+// ==========================================================================
+#header {
+    //
+    // Title, description and image
+    //
+    .page-header {
+        margin: 20px 0 20px;
+        .site-title {}
+        .site-description {
+            font-size: 16px;
+            font-style: italic;
+        }
+    }
+}
+
+// ==========================================================================
+// Navbar
+// ==========================================================================
+#main-navigation {
+    z-index: 1;
+    margin: 0;
+    border-radius: 0px;
+    border-bottom: 0px;
+    border-top: 4px solid $brand-primary;
+    -moz-box-shadow: 0 0 15px #888;
+    -webkit-box-shadow: 0 0 15px #888;
+    box-shadow: 0 0 15px #888;
+}
+
+.navbar-brand {
+    height: 100px;
+    img.logo{
+        max-height: 200px;
+        height: 70px;
+        padding: 5px;
+    }
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #555;
+    background: none;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-bottom: 4px solid $brand-primary;
+}
+.navbar-default .navbar-nav {
+    >li{
+        .active{
+            border-bottom: 4px solid $brand-primary;
+        }
+        text-transform: uppercase;
+        font-size: 14px;
+        >a{
+            @media (min-width: 768px) {
+                padding-top: 39px;
+                padding-bottom: 39px;
+                border-bottom: 4px solid $gray-lighter;
+
+                &:hover{
+                    border-bottom: 4px solid $brand-primary;
+                }
+                &:active{
+                    border-bottom: 4px solid $brand-primary;
+                }
+            }
+        }
+    }
+}
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+    border-bottom: 2px solid $brand-primary;
+}
+
+.navbar-btn {
+    margin-top: 27px;
+    margin-bottom: 25px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.conteudo-form-busca{
+    display: inline-flex;
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    color: #fff;
+    background-color: $brand-primary;
+}
+
+// ==========================================================================
+// Wrapper
+// ==========================================================================
+#wrapper {
+    .entry-title{
+    	margin-top: 0px;
+    }
+
+    .entry-title, .archive-title{
+    	background-color: #f8f8f8;
+    	border: 1px solid #e7e7e7;
+    	padding: 5px 10px;
+    	border-left: 4px solid $brand-primary;
+    }
+    .archive-title{
+    	margin-bottom: 20px;
+    }
+
+    .entry-content{
+    	margin-top: 20px;
+    }
+
+    .comments-warp{
+    	padding: 0px 15px;
+    }
+}
+
+// ==========================================================================
+// Content
+// ==========================================================================
+#content {
+    .post {
+        margin: 20px 0;
+    }
+}
+
+//
+// Home
+//
+.home {
+    #content {
+        .post {
+            margin-bottom: 40px;
+            &.sticky {
+                padding: 0 20px 20px;
+                border: 1px dashed $brand-info;
+            }
+        }
+    }
+}
+
+#carousel-home {
+    z-index: 0;
+    margin-bottom: 20px;
+    .item {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+// ==========================================================================
+// Footer
+// ==========================================================================
+
+//
+// Sticky footer styles
+//
+#footer {
+	padding: 20px;
+	margin: 0px;
+	border-top: 4px solid $brand-primary;
+	background-color: $gray-lighter;
+	text-align: left;
+	text-align: justify;
+	ul, ol, li{
+		margin: 0;
+		padding:0;
+		list-style-type: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	h1, h2, h3, h4, h5, h6, p{
+		text-decoration: none;
+	}
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    overflow-y: scroll;
+}
+
+*,body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+// ==========================================================================
+// Sidebar
+// ==========================================================================
+#sidebar {
+    padding-top: 20px;
+}
+
+// ==========================================================================
+// Components
+// ==========================================================================
+
+//
+// Fancy skip link
+//
+// Make it look a bit less "bare bones"
+// Also includes focus suppression for the Chrome tabindex="-1" workaround
+//
+#skippy {
+    display: block;
+    padding: 1em;
+    background-color: #f5f5f5;
+    outline: 0;
+}
+
+#skippy .skiplink-text {
+    padding: .5em;
+    outline: 1px dotted;
+}
+
+#content:focus {
+    outline: none;
+}
+
+//
+// Pagination
+//
+.pagination-wrap {
+    text-align: center;
+    margin-top: 15px;
+    .infinite-scroll & {
+        display: none;
+    }
+}
+
+
+/* ===== Buttons ===== */
+.btn {
+  text-transform: uppercase;
+  font-size: 12px;
+  border-radius: 2px !important;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.btn-lg,
+.btn-group-lg > .btn {
+  font-size: 14px;
+}
+.btn-sm,
+.btn-xs,
+.btn-group-xs > .btn,
+.btn-group-sm > .btn {
+  text-transform: none;
+}
+/*** Button Default ***/
+.btn-default {
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e9e9e9 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #e9e9e9 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e9e9e9 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe9e9e9', GradientType=0);
+  border-color: #dcdcdc;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-image: none;
+  background: white;
+  border-color: #dcdcdc;
+}
+/*** Button danger ***/
+.btn-danger {
+  background-image: -webkit-linear-gradient(top, #ec7263 0%, #db6152 100%);
+  background-image: -o-linear-gradient(top, #ec7263 0%, #db6152 100%);
+  background-image: linear-gradient(to bottom, #ec7263 0%, #db6152 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec7263', endColorstr='#ffdb6152', GradientType=0);
+  border-color: #db6152;
+  color: white;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-image: none;
+  background: #db6152;
+  border-color: #cf3d2b;
+  color: white;
+}
+/*** Button primary ***/
+.btn-primary {
+  background-image: -webkit-linear-gradient(top, $brand-primary 0%, lighten( $brand-primary, 8% ) 100%);
+  background-image: -o-linear-gradient(top, $brand-primary 0%, lighten( $brand-primary, 8% ) 100%);
+  background-image: linear-gradient(to bottom, $brand-primary 0%, lighten( $brand-primary, 8% ) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$brand-primary', endColorstr='lighten( $brand-primary, 8% )', GradientType=0);
+  border-color: $brand-primary;
+  color: white;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-image: none;
+  background: $brand-primary;
+  border-color: lighten($brand-primary, 10%);
+  color: white;
+}
+/*** Button Glass ***/
+.btn-glass {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #505050;
+}
+.btn-glass:hover,
+.btn-glass:focus,
+.btn-glass:active {
+  color: #505050;
+  text-decoration: none;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+.btn-glass .fa {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  background: #505050;
+  color: white;
+}

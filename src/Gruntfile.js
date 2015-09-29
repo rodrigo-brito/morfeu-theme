@@ -137,23 +137,17 @@ module.exports = function( grunt ) {
 					'sass/',
 					'src/',
 					'README.md',
-					'.ftppass'
+					'.ftpass'
 				],
 				recursive: true,
 				syncDest: true
 			},
-			staging: {
-				options: {
-					src: '../',
-					dest: '~/PATH/wp-content/themes/odin',
-					host: 'user@host.com'
-				}
-			},
 			production: {
 				options: {
 					src: '../',
-					dest: '~/PATH/wp-content/themes/odin',
-					host: 'user@host.com'
+					port: 65002,
+					dest: '~/public_html/wp-teste/wp-content/themes/ifmg-eventos/',
+					host: 'u362079615@185.28.21.201'
 				}
 			}
 		},

@@ -23,7 +23,7 @@
 
 	<!-- Open Sans - Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-	
+
 	<?php wp_head(); ?>
 </head>
 
@@ -59,7 +59,7 @@
 				          </ul>
 				        </li>
 				     </ul>
-					<a class="navbar-btn btn btn-blue btn-primary btn-lg pull-right hidden-xs" href="<?php echo get_option('sf-configuracoes')['formulario-envio']; ?>">Inscreva-se</a>
+					<a class="navbar-btn btn btn-blue btn-primary btn-lg pull-right hidden-xs" href="#">Inscreva-se</a>
 					<?php
 						wp_nav_menu(
 							array(

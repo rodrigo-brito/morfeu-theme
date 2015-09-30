@@ -8,9 +8,12 @@
 ?>
 
 <form method="get" id="searchform" class="form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-	<div class="form-group">
-		<label for="s" class="sr-only"><?php _e( 'Search', 'odin' ); ?></label>
-		<input type="search" class="form-control" name="s" id="s" />
-	</div>
-	<button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-search"></span></button>
+	<div class="input-group">
+      <input type="text" class="form-control" placeholder="Buscar..."  name="s" id="s" >
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary">
+			<span class="glyphicon glyphicon-search"></span>
+		</button>
+      </span>
+    </div><!-- /input-group -->
 </form>

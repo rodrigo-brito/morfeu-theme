@@ -24,25 +24,22 @@ get_header(); ?>
 		<li data-target="#carousel-home" data-slide-to="1"></li>
 		<li data-target="#carousel-home" data-slide-to="2"></li>
 	</ol>
-
+	<?php $image = get_template_directory_uri().'/assets/images/featured-image.png'; ?>
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
-		<div class="item active">
-		  <img src="http://placehold.it/1500x300" alt="Descrição">
+		<div class="item active" style="background-image: url(<?php echo $image; ?>);">
 		  <div class="carousel-caption">
 			<h3>Exemplo</h3>
 			<p>Descrição</p>
 		  </div>
 		</div>
-		<div class="item">
-		  <img src="http://placehold.it/1500x300" alt="Descrição">
+		<div class="item" style="background-image: url(<?php echo $image; ?>);">
 		  <div class="carousel-caption">
 			<h3>Exemplo</h3>
 			<p>Descrição</p>
 		  </div>
 		</div>
-		<div class="item">
-		  <img src="http://placehold.it/1500x300" alt="Descrição">
+		<div class="item" style="background-image: url(<?php echo $image; ?>);">
 		  <div class="carousel-caption">
 			<h3>Exemplo</h3>
 			<p>Descrição</p>
@@ -64,11 +61,10 @@ get_header(); ?>
 <div id="wrapper" class="container">
 	<div class="row">
 		<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
-
 			<div class="row">
-				<div class="col-sm-6 col-md-3" data-sr="enter top">
+				<div class="col-sm-6 col-md-6 col-lg-3" data-sr="enter top">
 					<div class="thumbnail">
-						<img src="http://placehold.it/300x300" alt="Teste">
+						<img src="http://placehold.it/500x500" alt="Teste">
 						<div class="caption">
 							<h3>Thumbnail label</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -76,9 +72,9 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3"  data-sr="enter top">
+				<div class="col-sm-6 col-md-6 col-lg-3"  data-sr="enter top">
 					<div class="thumbnail">
-						<img src="http://placehold.it/300x300" alt="Teste">
+						<img src="http://placehold.it/500x500" alt="Teste">
 						<div class="caption">
 							<h3>Thumbnail label</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -86,9 +82,9 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3" data-sr="enter top">
+				<div class="col-sm-6 col-md-6 col-lg-3" data-sr="enter top">
 					<div class="thumbnail">
-						<img src="http://placehold.it/300x300" alt="Teste">
+						<img src="http://placehold.it/500x500" alt="Teste">
 						<div class="caption">
 							<h3>Thumbnail label</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -96,9 +92,9 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3" data-sr="enter top">
+				<div class="col-sm-6 col-md-6 col-lg-3" data-sr="enter top">
 					<div class="thumbnail">
-						<img src="http://placehold.it/300x300" alt="Teste">
+						<img src="http://placehold.it/500x500" alt="Teste">
 						<div class="caption">
 							<h3>Thumbnail label</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

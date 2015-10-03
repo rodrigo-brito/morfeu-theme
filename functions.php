@@ -228,6 +228,9 @@ function odin_enqueue_scripts() {
 
 	// General scripts.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		// Scroll reveal.
+		wp_enqueue_script( 'scroll-reveal', $template_url . '/assets/js/libs/scrollReveal.min.js', array(), null, true );
+
 		// Bootstrap.
 		wp_enqueue_script( 'bootstrap', $template_url . '/assets/js/libs/bootstrap.min.js', array(), null, true );
 

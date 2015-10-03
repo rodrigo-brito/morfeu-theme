@@ -66,7 +66,7 @@ get_header(); ?>
 		<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
 
 			<div class="row">
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-3" data-sr="enter top">
 					<div class="thumbnail">
 						<img src="http://placehold.it/300x300" alt="Teste">
 						<div class="caption">
@@ -76,7 +76,7 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-3"  data-sr="enter top">
 					<div class="thumbnail">
 						<img src="http://placehold.it/300x300" alt="Teste">
 						<div class="caption">
@@ -86,7 +86,7 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-3" data-sr="enter top">
 					<div class="thumbnail">
 						<img src="http://placehold.it/300x300" alt="Teste">
 						<div class="caption">
@@ -96,7 +96,7 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-3" data-sr="enter top">
 					<div class="thumbnail">
 						<img src="http://placehold.it/300x300" alt="Teste">
 						<div class="caption">
@@ -110,11 +110,11 @@ get_header(); ?>
 			<div class="clearfix"></div>
 			
 			<div id="blog" class="row">
-				<div class="container">
+				<div class="container"  data-sr="enter top">
 					<h2>Últimas Notícias</h2>
 					<hr>
 				</div>
-				<div class="item-blog col-md-4">
+				<div class="item-blog col-md-4" data-sr="enter top">
 					<div class="media">
 						<div class="media-left">
 							<a href="#">
@@ -127,7 +127,7 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="item-blog col-md-4">
+				<div class="item-blog col-md-4" data-sr="enter top">
 					<div class="media">
 						<div class="media-left">
 							<a href="#">
@@ -140,7 +140,7 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="item-blog col-md-4">
+				<div class="item-blog col-md-4" data-sr="enter top">
 					<div class="media">
 						<div class="media-left">
 							<a href="#">
@@ -153,18 +153,18 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="more">
+				<div class="more" data-sr="enter top">
 					<a href="#">Mais notícias <span class="glyphicon glyphicon-chevron-right"></span></a>
 				</div>
 			</div>
 			<!-- /.blog -->
 
 			<div class="container">
-				<div class="page-header">
+				<div class="page-header" data-sr="enter top">
 					<h1 id="timeline">Programação</h1>
 				</div>
 				<ul class="timeline">
-					<li>
+					<li data-sr='enter right'>
 						<div class="timeline-badge primary">
 							<i class="glyphicon glyphicon-hand-left"></i>
 						</div>
@@ -190,7 +190,7 @@ get_header(); ?>
 							</div>
 						</div>
 					</li>
-					<li class="timeline-inverted">
+					<li class="timeline-inverted" data-sr='enter left'>
 						<div class="timeline-badge primary">
 							<i class="glyphicon glyphicon-chevron-right"></i>
 						</div>
@@ -206,7 +206,7 @@ get_header(); ?>
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-sr='enter right'>
 						<div class="timeline-badge primary">
 							<i class="glyphicon glyphicon-eye-open"></i>
 						</div>
@@ -220,7 +220,7 @@ get_header(); ?>
 							</div>
 						</div>
 					</li>
-					<li class="timeline-inverted">
+					<li class="timeline-inverted" data-sr='enter left'>
 						<div class="timeline-badge primary">
 							<i class="glyphicon glyphicon-home"></i>
 						</div>
@@ -233,7 +233,7 @@ get_header(); ?>
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-sr='enter right'>
 						<div class="timeline-badge primary">
 							<i class="glyphicon glyphicon-home"></i>
 						</div>
@@ -260,7 +260,7 @@ get_header(); ?>
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-sr='enter right'>
 						<div class="timeline-badge primary">
 							<i class="glyphicon glyphicon-arrow-left"></i>
 						</div>
@@ -274,7 +274,7 @@ get_header(); ?>
 							</div>
 						</div>
 					</li>
-					<li class="timeline-inverted">
+					<li class="timeline-inverted" data-sr='enter left'>
 						<div class="timeline-badge primary"><i class="glyphicon glyphicon-thumbs-up"></i></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
@@ -293,7 +293,7 @@ get_header(); ?>
 
 <!-- Google Maps -->
 <div id="map-home">
-	<div class="address visible-lg">
+	<div class="address visible-lg" data-sr='enter top'>
 		<h3>IFMG - Campus Sabará</h3>
 		<p>Avenida Serra da Piedade, 299</p>
 		<p>Morada da Serra, Sabará - MG, CEP 34515-640.</p>

@@ -202,7 +202,6 @@ html {
             margin-bottom: 20px;
         }
         .more {
-            margin-bottom: 20px;
             float: right;
         }
     }
@@ -295,8 +294,28 @@ input#s {
 // ==========================================================================
 #sidebar {
     padding-top: 20px;
-}
 
+    ul {
+        margin: 0 0 1em 0;
+        padding: 0 0 0 1em; /* make space for li's :before */
+        list-style: none;
+    }
+
+    li {
+        position: relative;
+        padding-left: 0.7em; /* text distance to icon */
+
+    }
+
+    li:before {
+            font-family: 'Glyphicons Halflings';
+            content: "\e118";
+            position: absolute;
+            left: -1em; /* same as ul padding-left */
+            opacity: 0.8;
+            //top: 0.15em; /* depends on character, maybe use padding-top instead */
+    }
+}
 // ==========================================================================
 // Components
 // ==========================================================================

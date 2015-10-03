@@ -20,5 +20,8 @@
 	</footer><!-- #footer -->
 
 	<?php wp_footer(); ?>
+	<script>
+		window.sr = new scrollReveal();
+	</script>
 </body>
 </html>

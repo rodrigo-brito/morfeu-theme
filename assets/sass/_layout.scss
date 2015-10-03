@@ -19,9 +19,17 @@
 
 
 // ==========================================================================
+// Main
+// ==========================================================================
+html {
+    position: relative;
+    min-height: 100%;
+    overflow-y: scroll;
+}
+
+// ==========================================================================
 // Clearfix
 // ==========================================================================
-
 .clearfix:after {
 	visibility: hidden;
 	display: block;
@@ -81,6 +89,7 @@
 .navbar-default .navbar-nav>.active>a {
     border-bottom: 4px solid $brand-primary;
 }
+
 .navbar-default .navbar-nav {
     >li{
         .active{
@@ -103,7 +112,11 @@
             }
         }
     }
+    .dropdown-menu {
+        z-index: 99;
+    }
 }
+
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:hover,
 .navbar-inverse .navbar-nav>.active>a:focus {
@@ -131,25 +144,25 @@
 // Wrapper
 // ==========================================================================
 #wrapper {
-    .entry-title{
+    .entry-title {
     	margin-top: 0px;
     }
 
-    .entry-title, .archive-title{
+    .entry-title, .archive-title {
     	background-color: #f8f8f8;
     	border: 1px solid #e7e7e7;
     	padding: 5px 10px;
     	border-left: 4px solid $brand-primary;
     }
-    .archive-title{
+    .archive-title {
     	margin-bottom: 20px;
     }
 
-    .entry-content{
+    .entry-content {
     	margin-top: 20px;
     }
 
-    .comments-warp{
+    .comments-warp {
     	padding: 0px 15px;
     }
 }
@@ -158,6 +171,14 @@
 // Content
 // ==========================================================================
 #content {
+    .entry-header {
+        margin-top: 20px;
+    }
+    .post {
+        margin: 20px 0;
+    }
+}
+#main-content {
     .post {
         margin: 20px 0;
     }
@@ -176,6 +197,15 @@
             }
         }
     }
+    #blog {        
+        .item-blog {
+            margin-bottom: 20px;
+        }
+        .more {
+            margin-bottom: 20px;
+            float: right;
+        }
+    }
 }
 
 #carousel-home {
@@ -188,10 +218,47 @@
     }
 }
 
+#map-home {
+    position: relative;
+    height: 400px;
+    #map {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .address {
+        padding: 0 20px;
+        z-index: 2;
+        position: absolute;
+        background-color: #fff;
+        width: 400px;
+        height: 200px;
+        top: 100px;
+        right: 5%;
+        -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
+
+        h3 {
+            font-weight: bold;
+        }
+        p {
+
+        }
+    }
+}
+
 
 // ==========================================================================
 // Serach
 // ==========================================================================
+#searchform button, #searchform input{    
+    z-index: 0;
+}
+
 input#s {
 	height: auto;
 	padding: 5px 12px;
@@ -221,16 +288,6 @@ input#s {
 	h1, h2, h3, h4, h5, h6, p{
 		text-decoration: none;
 	}
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-    overflow-y: scroll;
-}
-
-*,body{
-	font-family: 'Open Sans', sans-serif;
 }
 
 // ==========================================================================

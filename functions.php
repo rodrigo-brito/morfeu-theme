@@ -205,6 +205,7 @@ add_action( 'after_switch_theme', 'odin_flush_rewrite' );
  * @since 2.2.0
  */
 function odin_enqueue_scripts() {
+
 	$template_url = get_template_directory_uri();
 
 	// Loads Odin main stylesheet.
@@ -212,6 +213,18 @@ function odin_enqueue_scripts() {
 
 	// jQuery.
 	wp_enqueue_script( 'jquery' );
+
+	// Google Maps
+	if ( is_front_page() ) {
+		// Google Maps V3 Engine
+		wp_enqueue_script( 'google-maps-v3', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), null, true );
+		// Google Maps Configuration
+		wp_enqueue_script( 'google-maps-config', $template_url . '/assets/js/map.js', array( 'google-maps-v3' ), null, true );
+		wp_localize_script( 'google-maps-config', 'google_maps_data', array(
+			'address' => "Avenida Serra da Piedade, 299 - Morada da Serra, Sabará - MG", //TODO Entrada de endereço personalizado (Theme options)
+			'icon' => $template_url . '/assets/images/marker.png' //TODO Entrada de icone personalizado (Theme options)
+		));
+	}
 
 	// General scripts.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {

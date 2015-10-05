@@ -9,7 +9,7 @@ function destaque_cpt() {
 
     $slider->set_labels(
         array(
-            'menu_name' => __( 'Imagens em destaque', 'odin' )
+            'menu_name' => __( 'Slider Home', 'odin' )
         )
     );
 
@@ -23,6 +23,30 @@ function destaque_cpt() {
 }
 
 add_action( 'init', 'destaque_cpt', 1 );
+
+
+function minicursos_cpt() {
+    $minicurso = new Odin_Post_Type(
+        'Minicurso', // Nome (Singular) do Post Type.
+        'minicurso' // Slug do Post Type.
+    );
+
+    $minicurso->set_labels(
+        array(
+            'menu_name' => __( 'Minicursos', 'odin' )
+        )
+    );
+
+    $minicurso->set_arguments(
+        array(
+            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'menu_position' => 6,
+            'menu_icon' => 'dashicons-welcome-learn-more'
+        )
+    );
+}
+
+add_action( 'init', 'minicursos_cpt', 1 );
 
 
 function programacao_cpt() {
@@ -40,7 +64,7 @@ function programacao_cpt() {
     $programacao->set_arguments(
         array(
             'supports' => array( 'title', 'thumbnail' ),
-            'menu_position' => 6,
+            'menu_position' => 7,
             'menu_icon' => 'dashicons-calendar-alt'
         )
     );

@@ -156,127 +156,43 @@ $sliders = get_posts( $args ); ?>
 					<h1 id="timeline">Programação</h1>
 				</div>
 				<ul class="timeline">
-					<li data-sr='enter right'>
-						<div class="timeline-badge primary">
-							<i class="glyphicon glyphicon-hand-left"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<div class="media">
-									<div class="media-left">
-										<a href="#">
-											<img class="media-object" src="http://placehold.it/100x100" alt="Teste">
-										</a>
-									</div>
-									<div class="media-body">
-										<h4 class="media-heading">Media heading</h4>
-										<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1 de Janeiro de 2015</small></p>
-										<div class="timeline-body">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-												Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-												dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-												Aliquam in felis sit amet augue.</p>
+					<?php 
+					$args = array( 'posts_per_page' => -1, 'post_type' => 'evento');
+					$sliders = get_posts( $args );
+					$indice = 0;
+					foreach ($sliders as $post) : setup_postdata( $post );
+						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-home' ); 
+						$date = DateTime::createFromFormat('Ymd', get_field('data_evento')); ?>
+						<?php if($indice % 2 == 0): ?>
+						<li data-sr='enter right'>
+						<?php else: ?>
+						<li class="timeline-inverted" data-sr='enter left'>
+						<?php endif; $indice++; ?>
+							<div class="timeline-badge primary">
+								<i class="glyphicon glyphicon-calendar"></i>
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<div class="media">
+										<div class="media-left">
+											<a href="<?php the_permalink(); ?>">
+												<img class="media-object" src="<?php echo $thumbnail['0']; ?>">
+											</a>
+										</div>
+										<div class="media-body">
+											<h4 class="media-heading">
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+											</h4>
+											<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <?php echo $date->format('j \d\e F \d\e Y').' | '.get_field('hora_evento'); ?></small></p>
+											<div class="timeline-body">
+												<p><?php echo get_field('descricao_evento'); ?></p>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-					<li class="timeline-inverted" data-sr='enter left'>
-						<div class="timeline-badge primary">
-							<i class="glyphicon glyphicon-chevron-right"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4 class="timeline-title">Bootstrap 2</h4>
-							</div>
-							<div class="timeline-body">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-									Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-									dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-									Aliquam in felis sit amet augue.</p>
-							</div>
-						</div>
-					</li>
-					<li data-sr='enter right'>
-						<div class="timeline-badge primary">
-							<i class="glyphicon glyphicon-eye-open"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4 class="timeline-title">Left Event</h4>
-								<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 years ago</small></p>
-							</div>
-							<div class="timeline-body">
-								<p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
-							</div>
-						</div>
-					</li>
-					<li class="timeline-inverted" data-sr='enter left'>
-						<div class="timeline-badge primary">
-							<i class="glyphicon glyphicon-home"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4 class="timeline-title">Right Event</h4>
-							</div>
-							<div class="timeline-body">
-								<p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
-							</div>
-						</div>
-					</li>
-					<li data-sr='enter right'>
-						<div class="timeline-badge primary">
-							<i class="glyphicon glyphicon-home"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4 class="timeline-title">Left Event</h4>
-							</div>
-							<div class="timeline-body">
-								<p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
-
-								<hr>
-								<div class="btn-group">
-									<button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-										<i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">Action</a></li>
-										<li><a href="#">Another action</a></li>
-										<li><a href="#">Something else here</a></li>
-										<li class="divider"></li>
-										<li><a href="#">Separated link</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li data-sr='enter right'>
-						<div class="timeline-badge primary">
-							<i class="glyphicon glyphicon-arrow-left"></i>
-						</div>
-						<div class="timeline-panel">
-
-							<div class="timeline-heading">
-								<h4 class="timeline-title">Left Event</h4>
-							</div>
-							<div class="timeline-body">
-								<p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
-							</div>
-						</div>
-					</li>
-					<li class="timeline-inverted" data-sr='enter left'>
-						<div class="timeline-badge primary"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4 class="timeline-title">Oldest event</h4>
-							</div>
-							<div class="timeline-body">
-								<p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
-							</div>
-						</div>
-					</li>
+						</li>
+					<?php endforeach; ?>
 				</ul><!-- /.timeline -->
 			</div><!-- /.container -->
 		</main><!-- /#content -->

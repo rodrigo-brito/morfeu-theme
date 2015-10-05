@@ -219,6 +219,7 @@ html {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+
         -webkit-transition: opacity 1s;
         -moz-transition: opacity 1s;
         -ms-transition: opacity 1s;
@@ -226,7 +227,6 @@ html {
         transition: opacity 1s;
     }
 }
-
 #map-home {
     position: relative;
     height: 400px;

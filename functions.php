@@ -83,6 +83,11 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		add_theme_support( 'automatic-feed-links' );
 
 		/**
+		 * Add thumbnail blog home
+		 */
+		add_image_size( 'post-home', 100, 100, true );
+
+		/**
 		 * Support Custom Header.
 		 */
 		$default = array(

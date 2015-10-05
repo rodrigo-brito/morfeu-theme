@@ -17,34 +17,34 @@ get_header(); ?>
 
 	</div>
 </div>
+<?php 
+$args = array( 'posts_per_page' => -1, 'post_type' => 'slider');
+$sliders = get_posts( $args ); ?>
 <div id="carousel-home" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
+	<?php if($sliders): ?>
 	<ol class="carousel-indicators">
-		<li data-target="#carousel-home" data-slide-to="0" class="active"></li>
-		<li data-target="#carousel-home" data-slide-to="1"></li>
-		<li data-target="#carousel-home" data-slide-to="2"></li>
+	<?php for($i = 0; $i < count($sliders); $i++): ?>
+		<li data-target="#carousel-home" data-slide-to="<?php echo $i; ?>" class="<?php echo $i==0?"active":""; ?>"></li>
+	<?php endfor; ?>
 	</ol>
-	<?php $image = get_template_directory_uri().'/assets/images/featured-image.png'; ?>
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
-		<div class="item active" style="background-image: url(<?php echo $image; ?>);">
-		  <div class="carousel-caption">
-			<h3>Exemplo</h3>
-			<p>Descrição</p>
-		  </div>
-		</div>
-		<div class="item" style="background-image: url(<?php echo $image; ?>);">
-		  <div class="carousel-caption">
-			<h3>Exemplo</h3>
-			<p>Descrição</p>
-		  </div>
-		</div>
-		<div class="item" style="background-image: url(<?php echo $image; ?>);">
-		  <div class="carousel-caption">
-			<h3>Exemplo</h3>
-			<p>Descrição</p>
-		  </div>
-		</div>
+		<?php 
+			$active_class = "active";
+			foreach ( $sliders as $post ) : setup_postdata( $post ); 
+			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+				<div class="item <?php echo $active_class; ?>" style="background-image: url(<?php echo $large_image_url[0]; ?>);">
+				  <div class="carousel-caption">
+					<h3><?php the_title(); ?></h3>
+					<p><?php echo get_field('slider_descricao'); ?></p>
+				  </div>
+				</div>
+			<?php 
+			$active_class = "";
+			endforeach; 
+			wp_reset_postdata(); 
+		?>
 	</div>
 
 	<!-- Controls -->
@@ -56,8 +56,8 @@ get_header(); ?>
 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	</a>
+	<?php endif; ?>
 </div>
-
 <div id="wrapper" class="container">
 	<div class="row">
 		<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
@@ -110,47 +110,43 @@ get_header(); ?>
 					<h2>Últimas Notícias</h2>
 					<hr>
 				</div>
-				<div class="item-blog col-md-4" data-sr="enter top">
-					<div class="media">
-						<div class="media-left">
-							<a href="#">
-								<img class="media-object" src="http://placehold.it/100x100" alt="Teste">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-							<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1 de Janeiro de 2015</small></p>
-						</div>
-					</div>
-				</div>
-				<div class="item-blog col-md-4" data-sr="enter top">
-					<div class="media">
-						<div class="media-left">
-							<a href="#">
-								<img class="media-object" src="http://placehold.it/100x100" alt="Teste">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-							<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1 de Janeiro de 2015</small></p>
-						</div>
-					</div>
-				</div>
-				<div class="item-blog col-md-4" data-sr="enter top">
-					<div class="media">
-						<div class="media-left">
-							<a href="#">
-								<img class="media-object" src="http://placehold.it/100x100" alt="Teste">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-							<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1 de Janeiro de 2015</small></p>
-						</div>
-					</div>
-				</div>
+				<?php 
+					// The Query
+					$the_query = new WP_Query( ['posts_per_page' => 3, 'post_type' => 'post'] );
+
+					// The Loop
+					if ( $the_query->have_posts() ) {
+						while ( $the_query->have_posts() ) {
+							$the_query->the_post(); ?>
+
+							<div class="item-blog col-md-4" data-sr="enter top">
+								<div class="media">
+									<?php
+									$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'post-home' );
+									?>
+									<div class="media-left">
+										<a href="<?php echo the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+											<img class="media-object" src="<?php echo $thumbnail['0']; ?>" />
+										</a>
+									</div>
+									<div class="media-body">
+										<a href="<?php echo the_permalink(); ?>">
+											<h4 class="media-heading"><?php echo the_title(); ?></h4>
+										</a>
+										<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <?php the_date(); ?> </small></p>
+									</div>
+								</div>
+							</div>
+						
+						<?php }
+					} else {
+						// no posts found
+					}
+					/* Restore original Post Data */
+					wp_reset_postdata(); 
+				?>
 				<div class="more" data-sr="enter top">
-					<a href="#">Mais notícias <span class="glyphicon glyphicon-chevron-right"></span></a>
+					<a href="<?php echo bloginfo('url');?>">Mais notícias <span class="glyphicon glyphicon-chevron-right"></span></a>
 				</div>
 			</div>
 			<!-- /.blog -->

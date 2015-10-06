@@ -157,7 +157,21 @@ $sliders = get_posts( $args ); ?>
 				</div>
 				<ul class="timeline">
 					<?php 
-					$args = array( 'posts_per_page' => -1, 'post_type' => 'evento');
+					$args = array( 
+								'posts_per_page' 	=> -1,
+								'post_type' 		=> 'evento',
+								'meta_key'			=> 'data_evento',
+								'orderby'			=> 'meta_value_num',
+								'order'				=> 'ASC',
+								'meta_query' => array (
+									array (
+										'key' => 'data_evento',
+									),
+									array (
+										'key' => 'hora_evento'
+									)
+								)
+							);
 					$sliders = get_posts( $args );
 					$indice = 0;
 					foreach ($sliders as $post) : setup_postdata( $post );
@@ -181,11 +195,20 @@ $sliders = get_posts( $args ); ?>
 										</div>
 										<div class="media-body">
 											<h4 class="media-heading">
-												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+												<?php $evento = get_field('pagina_evento'); 
+												if($evento): ?>
+													<a href="<?php echo get_permalink($evento->ID); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+												<?php else: ?>
+													<?php the_title(); ?>
+												<?php endif; ?>
 											</h4>
 											<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <?php echo $date->format('j \d\e F \d\e Y').' | '.get_field('hora_evento'); ?></small></p>
 											<div class="timeline-body">
 												<p><?php echo get_field('descricao_evento'); ?></p>
+												<?php $local =  get_field('local_evento'); ?>
+												<?php if($local): ?>
+												<p><strong>Local: </strong><?php echo $local; ?></p>
+												<?php endif; ?>
 											</div>
 										</div>
 									</div>
@@ -193,6 +216,8 @@ $sliders = get_posts( $args ); ?>
 							</div>
 						</li>
 					<?php endforeach; ?>
+					<?php /* Restore original Post Data */
+					wp_reset_postdata(); ?>
 				</ul><!-- /.timeline -->
 			</div><!-- /.container -->
 		</main><!-- /#content -->

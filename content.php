@@ -11,9 +11,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<figure class="thumnail-content">
-			<?php the_post_thumbnail(); ?>
-		</figure>
+		<?php if ( has_post_thumbnail() ): ?>
+		<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+		<figure class="thumbnail-content" style="background-image: url(<?php echo $large_image_url[0]; ?>);"></figure>
+		<?php endif; ?>
 		<?php
 			if ( is_single() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -23,7 +24,7 @@
 		?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
-			<div class="entry-meta">
+			<div class="entry-meta well">
 				<?php odin_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

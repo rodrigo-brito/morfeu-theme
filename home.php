@@ -62,46 +62,36 @@ $sliders = get_posts( $args ); ?>
 	<div class="row">
 		<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
 			<div class="row">
-				<div class="col-sm-6 col-md-6 col-lg-3" data-sr="enter top">
-					<div class="thumbnail">
-						<img src="http://placehold.it/500x500" alt="Teste">
-						<div class="caption">
-							<h3>Thumbnail label</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+				<?php $args = array( 'posts_per_page' => -1, 'post_type' => 'minicurso');
+				$minicurso = get_posts( $args ); 
+				foreach ($minicurso as $post): ?>
+					<?php setup_postdata( $post ); 
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'minicurso-home' ); ?>
+					<div class="col-sm-6 col-md-6 col-lg-3" data-sr="enter top">
+						<div class="thumbnail">
+							<img src="<?php echo $thumbnail['0']; ?>" alt="<?php the_title(); ?>">
+							<div class="caption">
+								<h3><?php the_title(); ?></h3>
+								<?php
+									$vagas = get_field('qtde_vagas'); 
+									$instrutor  = get_field('instrutor');
+									$duracao = get_field('duracao');
+								?>
+								<?php if($duracao): ?>
+								<p><strong>Duracao: </strong><?php echo $duracao; ?></p>
+								<?php endif; ?>
+								<?php if($vagas): ?>
+								<p><strong>Vagas: </strong><?php echo $vagas; ?></p>
+								<?php endif; ?>
+								<?php if($instrutor): ?>
+								<p><strong>Instrutor: </strong><?php echo $instrutor; ?></p>
+								<?php endif; ?>
+								<p><?php the_content(); ?></p>
+								<p><a href="<?php the_permalink(); ?>" class="btn btn-default" role="button">Saiba Mais</a> <a href="#" class="btn btn-primary" role="button">Inscreva-se</a></p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-3"  data-sr="enter top">
-					<div class="thumbnail">
-						<img src="http://placehold.it/500x500" alt="Teste">
-						<div class="caption">
-							<h3>Thumbnail label</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-3" data-sr="enter top">
-					<div class="thumbnail">
-						<img src="http://placehold.it/500x500" alt="Teste">
-						<div class="caption">
-							<h3>Thumbnail label</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-3" data-sr="enter top">
-					<div class="thumbnail">
-						<img src="http://placehold.it/500x500" alt="Teste">
-						<div class="caption">
-							<h3>Thumbnail label</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-						</div>
-					</div>
-				</div>
+				<?php endforeach; ?>
 			</div><!-- /.row -->
 			<div class="clearfix"></div>
 			

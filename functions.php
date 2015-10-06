@@ -88,6 +88,12 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		add_image_size( 'post-home', 100, 100, true );
 
 		/**
+		 * Add thumbnail blog home
+		 */
+		add_image_size( 'minicurso-home', 500, 500, true );
+
+
+		/**
 		 * Support Custom Header.
 		 */
 		$default = array(

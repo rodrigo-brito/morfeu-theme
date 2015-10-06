@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="<?php echo odin_classes_page_full(); ?>">
+	<div id="primary" class="<?php echo odin_classes_page_sidebar(); ?>">
 		<main id="main-content" class="site-main" role="main">
 			<?php
 				// Start the Loop.
@@ -31,4 +31,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();

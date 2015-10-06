@@ -176,12 +176,18 @@ html {
     }
     .post {
         margin: 20px 0;
+        border: 1px solid $gray-lighter;
     }
 }
 #main-content {
     .post {
         margin: 20px 0;
+        border: 1px solid $gray-lighter;
     }
+}
+
+.conteudo-post {    
+    padding: 0px 20px 20px 20px;
 }
 
 //
@@ -314,7 +320,8 @@ input#s {
 // Sidebar
 // ==========================================================================
 #sidebar {
-    padding-top: 20px;
+    padding: 20px;
+    border-radius: 0px;
 
     ul {
         margin: 0 0 1em 0;
@@ -323,6 +330,9 @@ input#s {
     }
 
     li {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 5px;
         position: relative;
         padding-left: 0.7em; /* text distance to icon */
 
@@ -330,7 +340,7 @@ input#s {
 
     li:before {
             font-family: 'Glyphicons Halflings';
-            content: "\e118";
+            content: "\e080";
             position: absolute;
             left: -1em; /* same as ul padding-left */
             opacity: 0.8;

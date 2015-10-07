@@ -17,10 +17,10 @@ get_header(); ?>
 
 	</div>
 </div>
-<?php 
+<?php
 $args = array( 'posts_per_page' => -1, 'post_type' => 'slider');
 $sliders = get_posts( $args ); ?>
-<div id="carousel-home" class="carousel slide" data-ride="carousel">
+<div id="carousel-home" class="carousel slide carousel-fade" data-ride="carousel">
 	<!-- Indicators -->
 	<?php if($sliders): ?>
 	<ol class="carousel-indicators">
@@ -30,9 +30,9 @@ $sliders = get_posts( $args ); ?>
 	</ol>
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
-		<?php 
+		<?php
 			$active_class = "active";
-			foreach ( $sliders as $post ) : setup_postdata( $post ); 
+			foreach ( $sliders as $post ) : setup_postdata( $post );
 			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
 				<div class="item <?php echo $active_class; ?>" style="background-image: url(<?php echo $large_image_url[0]; ?>);">
 				  <div class="carousel-caption">
@@ -40,10 +40,10 @@ $sliders = get_posts( $args ); ?>
 					<p><?php echo get_field('slider_descricao'); ?></p>
 				  </div>
 				</div>
-			<?php 
+			<?php
 			$active_class = "";
-			endforeach; 
-			wp_reset_postdata(); 
+			endforeach;
+			wp_reset_postdata();
 		?>
 	</div>
 
@@ -63,29 +63,15 @@ $sliders = get_posts( $args ); ?>
 		<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
 			<div class="row">
 				<?php $args = array( 'posts_per_page' => -1, 'post_type' => 'minicurso');
-				$minicurso = get_posts( $args ); 
+				$minicurso = get_posts( $args );
 				foreach ($minicurso as $post): ?>
-					<?php setup_postdata( $post ); 
+					<?php setup_postdata( $post );
 					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'minicurso-home' ); ?>
 					<div class="col-sm-6 col-md-6 col-lg-3" data-sr="enter top">
 						<div class="thumbnail">
 							<img src="<?php echo $thumbnail['0']; ?>" alt="<?php the_title(); ?>">
 							<div class="caption">
 								<h3><?php the_title(); ?></h3>
-								<?php
-									$vagas = get_field('qtde_vagas'); 
-									$instrutor  = get_field('instrutor');
-									$duracao = get_field('duracao');
-								?>
-								<?php if($duracao): ?>
-								<p><strong>Duracao: </strong><?php echo $duracao; ?></p>
-								<?php endif; ?>
-								<?php if($vagas): ?>
-								<p><strong>Vagas: </strong><?php echo $vagas; ?></p>
-								<?php endif; ?>
-								<?php if($instrutor): ?>
-								<p><strong>Instrutor: </strong><?php echo $instrutor; ?></p>
-								<?php endif; ?>
 								<p><?php the_content(); ?></p>
 								<p><a href="<?php the_permalink(); ?>" class="btn btn-default" role="button">Saiba Mais</a> <a href="#" class="btn btn-primary" role="button">Inscreva-se</a></p>
 							</div>
@@ -94,13 +80,12 @@ $sliders = get_posts( $args ); ?>
 				<?php endforeach; ?>
 			</div><!-- /.row -->
 			<div class="clearfix"></div>
-			
 			<div id="blog" class="row">
 				<div class="container"  data-sr="enter top">
 					<h2>Últimas Notícias</h2>
 					<hr>
 				</div>
-				<?php 
+				<?php
 					// The Query
 					$the_query = new WP_Query( ['posts_per_page' => 3, 'post_type' => 'post'] );
 
@@ -127,13 +112,12 @@ $sliders = get_posts( $args ); ?>
 									</div>
 								</div>
 							</div>
-						
 						<?php }
 					} else {
 						// no posts found
 					}
 					/* Restore original Post Data */
-					wp_reset_postdata(); 
+					wp_reset_postdata();
 				?>
 				<div class="more" data-sr="enter top">
 					<a href="<?php echo bloginfo('url');?>">Mais notícias <span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -146,21 +130,13 @@ $sliders = get_posts( $args ); ?>
 					<h1 id="timeline">Programação</h1>
 				</div>
 				<ul class="timeline">
-					<?php 
-					$args = array( 
+					<?php
+					$args = array(
 								'posts_per_page' 	=> -1,
 								'post_type' 		=> 'evento',
 								'meta_key'			=> 'data_evento',
 								'orderby'			=> 'meta_value_num',
-								'order'				=> 'ASC',
-								'meta_query' => array (
-									array (
-										'key' => 'data_evento',
-									),
-									array (
-										'key' => 'hora_evento'
-									)
-								)
+								'order'				=> 'ASC'
 							);
 					$sliders = get_posts( $args );
 					$indice = 0;
@@ -185,14 +161,20 @@ $sliders = get_posts( $args ); ?>
 										</div>
 										<div class="media-body">
 											<h4 class="media-heading">
-												<?php $evento = get_field('pagina_evento'); 
+												<?php $evento = get_field('pagina_evento');
 												if($evento): ?>
 													<a href="<?php echo get_permalink($evento->ID); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 												<?php else: ?>
 													<?php the_title(); ?>
 												<?php endif; ?>
 											</h4>
-											<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <?php echo $date->format('j \d\e F \d\e Y').' | '.get_field('hora_evento'); ?></small></p>
+											<?php
+												if($date){
+													$data = $date->format('j \d\e F \d\e Y');
+												}
+												$hora = get_field('hora_evento');
+											 ?>
+											<p><small class="text-muted"><?php echo isset($data)?'<i class="glyphicon glyphicon-calendar"></i> '.$data:''; ?><?php echo !empty($hora)?'<i class="glyphicon glyphicon-time"></i> '.$hora:''; ?></small></p>
 											<div class="timeline-body">
 												<p><?php echo get_field('descricao_evento'); ?></p>
 												<?php $local =  get_field('local_evento'); ?>

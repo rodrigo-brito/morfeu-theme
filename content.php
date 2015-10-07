@@ -8,7 +8,6 @@
  * @since 2.2.0
  */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail() ): ?>
@@ -25,11 +24,11 @@
 	</header><!-- .entry-header -->
 	<div class="conteudo-post">
 		<?php if ( 'post' == get_post_type() ) : ?>
-			<div class="entry-meta well">
+			<div class="entry-meta well well-sm">
 				<?php odin_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-		<?php if ( is_search() ) : ?>
+		<?php if ( is_search() || is_archive() ) : ?>
 			<div class="entry-summary">
 				<?php the_excerpt(); ?>
 			</div><!-- .entry-summary -->

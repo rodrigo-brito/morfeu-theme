@@ -61,11 +61,9 @@ if ( ! function_exists( 'odin_posted_on' ) ) {
 		}
 
 		// Set up and print post meta information.
-		printf( '<span class="entry-date">%s <time class="entry-date" datetime="%s">%s</time></span> <span class="byline">%s <span class="author vcard"><a class="url fn n" href="%s" rel="author">%s</a></span>.</span>',
-			__( 'Posted in', 'odin' ),
+		printf( '<span class="entry-date"> <i class="glyphicon glyphicon-calendar"></i> <time class="entry-date" datetime="%s">%s</time></span> <i class="glyphicon glyphicon-user"></i> <span class="author vcard"> <a class="url fn n" href="%s" rel="author">%s</a></span>',
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
-			__( 'by', 'odin' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			get_the_author()
 		);

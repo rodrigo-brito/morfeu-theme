@@ -59,7 +59,7 @@
 				          </ul>
 				        </li>
 				     </ul>
-					<a class="navbar-btn btn btn-blue btn-primary btn-lg pull-right hidden-xs" href="#">Inscreva-se</a>
+					<a href="<?php echo wp_registration_url(); ?>" class="navbar-btn btn btn-blue btn-primary btn-lg pull-right hidden-xs" href="#">Cadastre-se</a>
 					<?php
 						wp_nav_menu(
 							array(

@@ -36,7 +36,7 @@ $sliders = get_posts( $args ); ?>
 			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
 				<div class="item <?php echo $active_class; ?>" style="background-image: url(<?php echo $large_image_url[0]; ?>);">
 				  <div class="carousel-caption">
-					<h3><?php the_title(); ?></h3>
+					<h1><?php the_title(); ?></h1>
 					<p><?php echo get_field('slider_descricao'); ?></p>
 				  </div>
 				</div>
@@ -73,7 +73,7 @@ $sliders = get_posts( $args ); ?>
 							<div class="caption">
 								<h3><?php the_title(); ?></h3>
 								<p><?php the_content(); ?></p>
-								<p><a href="<?php the_permalink(); ?>" class="btn btn-default" role="button">Saiba Mais</a> <a href="#" class="btn btn-primary" role="button">Inscreva-se</a></p>
+								<p><a href="<?php the_permalink(); ?>" class="btn btn-primary form-control" role="button">Saiba Mais</a></p>
 							</div>
 						</div>
 					</div>
@@ -124,73 +124,83 @@ $sliders = get_posts( $args ); ?>
 				</div>
 			</div>
 			<!-- /.blog -->
-
+			<div class="page-header" data-sr="enter top">
+				<h2 id="timeline">Programação</h2>
+			</div>
 			<div class="container">
-				<div class="page-header" data-sr="enter top">
-					<h1 id="timeline">Programação</h1>
-				</div>
-				<ul class="timeline">
-					<?php
-					$args = array(
-								'posts_per_page' 	=> -1,
-								'post_type' 		=> 'evento',
-								'meta_key'			=> 'data_evento',
-								'orderby'			=> 'meta_value_num',
-								'order'				=> 'ASC'
-							);
-					$sliders = get_posts( $args );
-					$indice = 0;
-					foreach ($sliders as $post) : setup_postdata( $post );
-						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-home' ); 
-						$date = DateTime::createFromFormat('Ymd', get_field('data_evento')); ?>
-						<?php if($indice % 2 == 0): ?>
-						<li data-sr='enter right'>
-						<?php else: ?>
-						<li class="timeline-inverted" data-sr='enter left'>
-						<?php endif; $indice++; ?>
-							<div class="timeline-badge primary">
-								<i class="glyphicon glyphicon-calendar"></i>
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<div class="media">
-										<div class="media-left">
-											<a href="<?php the_permalink(); ?>">
-												<img class="media-object" src="<?php echo $thumbnail['0']; ?>">
-											</a>
-										</div>
-										<div class="media-body">
-											<h4 class="media-heading">
-												<?php $evento = get_field('pagina_evento');
-												if($evento): ?>
-													<a href="<?php echo get_permalink($evento->ID); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-												<?php else: ?>
-													<?php the_title(); ?>
-												<?php endif; ?>
-											</h4>
-											<?php
-												if($date){
-													$data = $date->format('j \d\e F \d\e Y');
-												}
-												$hora = get_field('hora_evento');
-											 ?>
-											<p><small class="text-muted"><?php echo isset($data)?'<i class="glyphicon glyphicon-calendar"></i> '.$data:''; ?><?php echo !empty($hora)?'<i class="glyphicon glyphicon-time"></i> '.$hora:''; ?></small></p>
-											<div class="timeline-body">
-												<p><?php echo get_field('descricao_evento'); ?></p>
-												<?php $local =  get_field('local_evento'); ?>
-												<?php if($local): ?>
-												<p><strong>Local: </strong><?php echo $local; ?></p>
-												<?php endif; ?>
+				<div class="row">
+					<ul class="timeline">
+						<?php
+						$args = array(
+									'posts_per_page' 	=> -1,
+									'post_type' 		=> 'evento',
+									'meta_query' => array(
+										array(
+											'key'     => 'data_evento',
+											'orderby' => 'meta_value_num',
+											'order' => 'ASC',
+										),
+										array(
+											'key'     => 'hora_evento',
+											'orderby' => 'meta_value',
+											'order' => 'ASC'
+										)
+									),
+								);
+						$sliders = get_posts( $args );
+						$indice = 0;
+						foreach ($sliders as $post) : setup_postdata( $post );
+							$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-home' ); 
+							$date = DateTime::createFromFormat('Ymd', get_field('data_evento')); ?>
+							<?php if($indice % 2 == 0): ?>
+							<li data-sr='enter right'>
+							<?php else: ?>
+							<li class="timeline-inverted" data-sr='enter left'>
+							<?php endif; $indice++; ?>
+								<div class="timeline-badge primary">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</div>
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<div class="media">
+											<div class="media-left">
+												<a href="<?php the_permalink(); ?>">
+													<img class="media-object" src="<?php echo $thumbnail['0']; ?>">
+												</a>
+											</div>
+											<div class="media-body">
+												<h4 class="media-heading">
+													<?php $evento = get_field('pagina_evento');
+													if($evento): ?>
+														<a href="<?php echo get_permalink($evento->ID); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+													<?php else: ?>
+														<?php the_title(); ?>
+													<?php endif; ?>
+												</h4>
+												<?php
+													if($date){
+														$data = $date->format('j \d\e F \d\e Y');
+													}
+													$hora = get_field('hora_evento');
+												 ?>
+												<p><small class="text-muted"><?php echo isset($data)?'<i class="glyphicon glyphicon-calendar"> </i> '.$data:''; ?><?php echo !empty($hora)?' <i class="glyphicon glyphicon-time"> </i> '.$hora:''; ?></small></p>
+												<div class="timeline-body">
+													<p><?php echo get_field('descricao_evento'); ?></p>
+													<?php $local =  get_field('local_evento'); ?>
+													<?php if($local): ?>
+													<p><strong>Local: </strong><?php echo $local; ?></p>
+													<?php endif; ?>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</li>
-					<?php endforeach; ?>
-					<?php /* Restore original Post Data */
-					wp_reset_postdata(); ?>
-				</ul><!-- /.timeline -->
+							</li>
+						<?php endforeach; ?>
+						<?php /* Restore original Post Data */
+						wp_reset_postdata(); ?>
+					</ul><!-- /.timeline -->
+				</div>
 			</div><!-- /.container -->
 		</main><!-- /#content -->
 	</div><!-- .row -->

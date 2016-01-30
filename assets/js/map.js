@@ -7,7 +7,7 @@ function initialize(){
 	if ( el === null || el === undefined ) return;
 
 	// Initialize map instance and div selection
-	var map = new google.maps.Map(el, {zoom: 15, disableDefaultUI: true});
+	var map = new google.maps.Map(el, {zoom: 15, disableDefaultUI: true, scrollwheel: false});
 
 	// Initialize geographical location
 	var geocoder = new google.maps.Geocoder();

@@ -39,12 +39,6 @@ require_once get_template_directory() . '/core/classes/class-taxonomy.php';
 // require_once get_template_directory() . '/core/classes/class-term-meta.php';
 
 /**
- * Custom settings - IFMG eventos
- */
-include_once get_template_directory() . '/inc/settings.php';
-
-
-/**
  * Odin Widgets.
  */
 require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';

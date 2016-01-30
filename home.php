@@ -18,7 +18,11 @@ get_header(); ?>
 	</div>
 </div>
 <?php
-$args = array( 'posts_per_page' => -1, 'post_type' => 'slider');
+$args = array(
+	'numberposts'=>5,            // should show 5 but only shows 3
+	'post_type'=>'post',         // posts only
+	'meta_key'=>'_thumbnail_id', // with thumbnail
+);
 $sliders = get_posts( $args ); ?>
 <div id="carousel-home" class="carousel slide carousel-fade" data-ride="carousel">
 	<!-- Indicators -->
@@ -37,7 +41,7 @@ $sliders = get_posts( $args ); ?>
 				<div class="item <?php echo $active_class; ?>" style="background-image: url(<?php echo $large_image_url[0]; ?>);">
 				  <div class="carousel-caption">
 					<h1><?php the_title(); ?></h1>
-					<p><?php echo get_field('slider_descricao'); ?></p>
+					<p><?php the_excerpt(); ?></p>
 				  </div>
 				</div>
 			<?php

@@ -1,5 +1,5 @@
-# ifmg-eventos
-Morfeu - Free WordPress Theme
+# Morfeu
+### Free WordPress Theme
 
 ## Quer colaborar? ##
 

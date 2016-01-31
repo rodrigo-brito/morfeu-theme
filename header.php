@@ -40,7 +40,11 @@
 					<span class="icon-bar"></span>
 				  </button>
 		          <a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-header.png" class="logo" alt="Sabara Fotos">
+					<?php if ( get_theme_mod( 'morfeu_logo' ) ) : ?>
+						<img class="logo" src='<?php echo esc_url( get_theme_mod( 'morfeu_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+					<?php else: ?>
+						<h1 class='site-title'><?php bloginfo( 'name' ); ?></h1>
+					<?php endif; ?>
 		          </a>
 		        </div>
 		        <div class="collapse navbar-collapse navbar-right navbar-main-navigation">

@@ -16,6 +16,10 @@
 				echo $iteration % 3 == 0 ? '<div class="clearfix"></div>' : '';
 				$iteration++;
 			endwhile;
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 		else :
 			// If no content, include the "No posts found" template.
 			get_template_part( 'content', 'none' );

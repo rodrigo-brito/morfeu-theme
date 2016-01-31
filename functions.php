@@ -86,6 +86,10 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 */
 		add_image_size( 'minicurso-home', 500, 500, true );
 
+		/**
+		 * For fit in the main grid, define 9 posts per page
+		 */
+		update_option( 'posts_per_page', 9);
 
 		/**
 		 * Support Custom Header.
@@ -289,6 +293,26 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 		return class_exists( 'woocommerce' ) ? true : false;
 	}
 }
+
+/**
+ * Logo selector for theme customize
+ */
+function morfeu_customize_register( $wp_customize ) {
+    $wp_customize->add_section( 'morfeu_logo_section' , array(
+	    'title'       => __( 'Logo', 'odin' ),
+	    'priority'    => 30,
+	    'description' => __('Upload a logo to replace the default site name in the header'),
+	) );
+	$wp_customize->add_setting( 'morfeu_logo', array(
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'morfeu_logo', array(
+		'label'    => __( 'Logo', 'odin' ),
+		'section'  => 'morfeu_logo_section',
+		'settings' => 'morfeu_logo',
+	) ) );
+}
+add_action( 'customize_register', 'morfeu_customize_register' );
 
 /**
  * Core Helpers.

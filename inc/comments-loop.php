@@ -26,7 +26,7 @@ if ( ! function_exists( 'odin_comment_loop' ) ) {
 				<li <?php comment_class( 'media' ); ?> id="li-comment-<?php comment_ID(); ?>">
 					<article id="div-comment-<?php comment_ID(); ?>" class="comment-body comment-author vcard">
 						<div class="media-left">
-							<?php echo str_replace( "class='avatar", "class='media-object avatar", get_avatar( $comment, 64 ) ); ?>
+							<?php echo str_replace( "class='avatar", "class='media-object img-circle avatar", get_avatar( $comment, 64 ) ); ?>
 						</div>
 						<div class="media-body">
 							<footer class="comment-meta">

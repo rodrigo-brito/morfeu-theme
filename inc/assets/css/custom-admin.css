@@ -2,8 +2,8 @@
  * Custom login styles.
  */
 .login h1 a {
-	background: url('../images/logo.png') center top no-repeat !important;
-	background: url('../images/logo.svg') center top no-repeat !important;
+	background: url('../images/logo-login.png') center top no-repeat !important;
+	background: url('../images/logo-login.svg') center top no-repeat !important;
 	background-size: 80px 80px !important;
 	height: 80px !important;
 	width: 80px !important;

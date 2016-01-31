@@ -58,8 +58,7 @@
 							</li>
 				          </ul>
 				        </li>
-				     </ul>
-					<a href="<?php echo wp_registration_url(); ?>" class="navbar-btn btn btn-blue btn-primary btn-lg pull-right hidden-xs" href="#">Cadastre-se</a>
+				    </ul>
 					<?php
 						wp_nav_menu(
 							array(

@@ -166,6 +166,11 @@ h1, h2, h3, h4, h5 {
     .comments-warp {
     	padding: 0px 15px;
     }
+
+    .entry-meta {
+        font-size: 12px;
+        color: $gray;
+    }
 }
 
 // ==========================================================================
@@ -174,15 +179,32 @@ h1, h2, h3, h4, h5 {
 #content {
     .entry-header {
     }
-    .post {
-        margin: 20px 0;
+    article {
+        margin: 10px 0;
         border: 1px solid $gray-lighter;
     }
 }
+
 #main-content {
-    .post {
-        margin: 20px 0;
+    article {
+        margin: 10px 0;
         border: 1px solid $gray-lighter;
+    }
+}
+
+.single, .page {
+    #content {
+        .entry-header {
+        }
+        article {
+            margin: 0;
+        }
+    }
+
+    #main-content {
+        article {
+            margin: 0;
+        }
     }
 }
 
@@ -203,7 +225,6 @@ h1, h2, h3, h4, h5 {
 .home {
     #content {
         .post {
-            margin-bottom: 40px;
             &.sticky {
                 padding: 0 20px 20px;
                 border: 1px dashed $brand-info;
@@ -222,6 +243,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .thumbnail-content {
+    position: relative;
     height: 200px;
     width: 100%;
     background-repeat: no-repeat;
@@ -230,6 +252,29 @@ h1, h2, h3, h4, h5 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.overlay-thumbnail {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    background-color: $gray-darker;
+    opacity: 0;
+    span {
+        position: absolute;
+        font-size: 30px;
+        color: #fff;
+        top: 50%;
+        right: 50%;
+        margin-top: -15px;
+        margin-right: -15px;
+    }
+    &:hover {
+        opacity: 0.8;
+        transition: opacity .25s ease-in-out;
+       -moz-transition: opacity .25s ease-in-out;
+       -webkit-transition: opacity .25s ease-in-out;
+    }
 }
 
 #carousel-home {
@@ -278,42 +323,6 @@ h1, h2, h3, h4, h5 {
 }
 .carousel-fade .carousel-control {
     z-index: 2;
-}
-
-/**
- * Google maps homepage
- */
-#map-home {
-    position: relative;
-    height: 400px;
-    #map {
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-    }
-    .address {
-        padding: 0 20px;
-        z-index: 2;
-        position: absolute;
-        background-color: #fff;
-        width: 400px;
-        height: 200px;
-        top: 100px;
-        right: 5%;
-        -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
-        -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
-        box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
-
-        h3 {
-            font-weight: bold;
-        }
-        p {
-
-        }
-    }
 }
 
 
@@ -528,190 +537,10 @@ input#s {
   color: white;
 }
 
-//==============================================================================
-// Timeline
-//==============================================================================
-
-.timeline {
-    list-style: none;
-    padding: 20px 0 20px;
-    position: relative;
-}
-
-.timeline:before {
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    content: " ";
-    width: 3px;
-    background-color: #eeeeee;
-    left: 50%;
-    margin-left: -1.5px;
-}
-
-.timeline > li {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.timeline > li:before,
-.timeline > li:after {
-    content: " ";
-    display: table;
-}
-
-.timeline > li:after {
-    clear: both;
-}
-
-.timeline > li:before,
-.timeline > li:after {
-    content: " ";
-    display: table;
-}
-
-.timeline > li:after {
-    clear: both;
-}
-
-.timeline > li > .timeline-panel {
-    width: 46%;
-    float: left;
-    border: 1px solid #d4d4d4;
-    border-radius: 2px;
-    padding: 20px;
-    position: relative;
-    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-}
-
-.timeline > li > .timeline-panel:before {
-    position: absolute;
-    top: 26px;
-    right: -15px;
-    display: inline-block;
-    border-top: 15px solid transparent;
-    border-left: 15px solid #ccc;
-    border-right: 0 solid #ccc;
-    border-bottom: 15px solid transparent;
-    content: " ";
-}
-
-.timeline > li > .timeline-panel:after {
-    position: absolute;
-    top: 27px;
-    right: -14px;
-    display: inline-block;
-    border-top: 14px solid transparent;
-    border-left: 14px solid #fff;
-    border-right: 0 solid #fff;
-    border-bottom: 14px solid transparent;
-    content: " ";
-}
-
-.timeline > li > .timeline-badge {
+.icon-circle {
     color: #fff;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-    text-align: center;
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    margin-left: -25px;
-    background-color: #999999;
-    z-index: 100;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-}
-
-.timeline > li.timeline-inverted > .timeline-panel {
-    float: right;
-}
-
-.timeline > li.timeline-inverted > .timeline-panel:before {
-    border-left-width: 0;
-    border-right-width: 15px;
-    left: -15px;
-    right: auto;
-}
-
-.timeline > li.timeline-inverted > .timeline-panel:after {
-    border-left-width: 0;
-    border-right-width: 14px;
-    left: -14px;
-    right: auto;
-}
-
-.timeline-badge.primary {
-    background-color: $brand-primary !important;
-}
-
-.timeline-badge.success {
-    background-color: #3f903f !important;
-}
-
-.timeline-badge.warning {
-    background-color: #f0ad4e !important;
-}
-
-.timeline-badge.danger {
-    background-color: #d9534f !important;
-}
-
-.timeline-badge.info {
-    background-color: #5bc0de !important;
-}
-
-.timeline-title {
-    margin-top: 0;
-    color: inherit;
-}
-
-.timeline-body > p,
-.timeline-body > ul {
-    margin-bottom: 0;
-}
-
-.timeline-body > p + p {
-    margin-top: 5px;
-}
-
-@media (max-width: 767px) {
-    ul.timeline:before {
-        left: 40px;
-    }
-
-    ul.timeline > li > .timeline-panel {
-        width: calc(100% - 90px);
-        width: -moz-calc(100% - 90px);
-        width: -webkit-calc(100% - 90px);
-    }
-
-    ul.timeline > li > .timeline-badge {
-        left: 15px;
-        margin-left: 0;
-        top: 16px;
-    }
-
-    ul.timeline > li > .timeline-panel {
-        float: right;
-    }
-
-    ul.timeline > li > .timeline-panel:before {
-        border-left-width: 0;
-        border-right-width: 15px;
-        left: -15px;
-        right: auto;
-    }
-
-    ul.timeline > li > .timeline-panel:after {
-        border-left-width: 0;
-        border-right-width: 14px;
-        left: -14px;
-        right: auto;
-    }
+    border-radius: 50%;
+    padding: 10px;
+    background-color: $brand-primary;
+    margin: 5px;
 }

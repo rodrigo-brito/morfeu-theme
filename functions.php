@@ -148,11 +148,6 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		// ) );
 
 		/**
-		 * Support The Excerpt on pages.
-		 */
-		// add_post_type_support( 'page', 'excerpt' );
-
-		/**
 		 * Switch default core markup for search form, comment form, and comments to output valid HTML5.
 		 */
 		add_theme_support(
@@ -328,101 +323,4 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/hooks.php';
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
-}
-
-function cadastrar_minicurso_callback() {
-	global $current_user;
-    get_currentuserinfo();
-
-	$minicurso_id = intval( $_POST['minicurso'] );
-	$user_id = $current_user->ID;
-
-	$participantes = get_field('participantes', $minicurso_id);
-	$participantes_ids = [];
-	if( $participantes ){
-		foreach ($participantes as $participante) {
-			if($participante['ID'] == $user_id){ //já cadastrado
-				echo 'sucesso';
-				wp_die();
-			}
-			$participantes_ids[] = $participante['ID'];
-		}
-	}
-	$participantes_ids[] = $user_id;
-	update_field('field_5614724c1c8d1', $participantes_ids, $minicurso_id);
-    if( verificaCadastroMinicurso( $minicurso_id ) ){
-    	echo 'sucesso';
-    }else{
-    	echo 'erro';
-    }
-	wp_die();
-}
-
-add_action( 'wp_ajax_cadastrar_minicurso', 'cadastrar_minicurso_callback' );
-
-function descadastrar_minicurso_callback() {
-	global $current_user;
-    get_currentuserinfo();
-
-	$minicurso_id = intval( $_POST['minicurso'] );
-	$user_id = $current_user->ID;
-
-	$participantes = get_field('participantes', $minicurso_id);
-	$participantes_ids = [];
-	if( $participantes ){
-		foreach ($participantes as $participante) {
-			if($participante['ID'] != $user_id){
-				$participantes_ids[] = $participante['ID'];
-			}
-		}
-	}
-	update_field('field_5614724c1c8d1', $participantes_ids, $minicurso_id);
-    if( verificaCadastroMinicurso( $minicurso_id ) ){
-    	echo 'erro';
-    }else{
-    	echo 'sucesso';
-    }
-	wp_die();
-}
-
-add_action( 'wp_ajax_descadastrar_minicurso', 'descadastrar_minicurso_callback' );
-
-function descadastrar_minicurso_usuario_callback() {
-	$minicurso_id = intval( $_POST['minicurso'] );
-	$user_id = intval( $_POST['usuario'] );
-
-	$participantes = get_field('participantes', $minicurso_id);
-	$participantes_ids = [];
-	if( $participantes ){
-		foreach ($participantes as $participante) {
-			if($participante['ID'] != $user_id){
-				$participantes_ids[] = $participante['ID'];
-			}
-		}
-	}
-	update_field('field_5614724c1c8d1', $participantes_ids, $minicurso_id);
-    if( verificaCadastroMinicurso( $minicurso_id ) ){
-    	echo 'erro';
-    }else{
-    	echo 'sucesso';
-    }
-	wp_die();
-}
-
-add_action( 'wp_ajax_descadastrar_minicurso_usuario', 'descadastrar_minicurso_usuario_callback' );
-
-function verificaCadastroMinicurso( $minicurso_id ){
-	global $current_user;
-    get_currentuserinfo();
-	$user_id = $current_user->ID;
-
-	$participantes = get_field('participantes', $minicurso_id);
-	if( $participantes ){
-		foreach ($participantes as $participante) {
-			if($participante['ID'] == $user_id){
-				return true;
-			}
-		}
-	}
-	return false;
 }

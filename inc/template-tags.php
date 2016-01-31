@@ -61,11 +61,26 @@ if ( ! function_exists( 'odin_posted_on' ) ) {
 		}
 
 		// Set up and print post meta information.
-		printf( '<span class="entry-date"> <i class="glyphicon glyphicon-calendar"></i> <time class="entry-date" datetime="%s">%s</time></span> <i class="glyphicon glyphicon-user"></i> <span class="author vcard"> <a class="url fn n" href="%s" rel="author">%s</a></span>',
+		printf( '<span class="entry-date"> <i class="icon-circle glyphicon glyphicon-calendar"></i> <time class="entry-date" datetime="%s">%s</time></span> <i class="icon-circle glyphicon glyphicon-user"></i> <span class="author vcard"> By <a class="url fn n" href="%s" rel="author">%s</a></span>',
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			get_the_author()
+		);
+
+		printf('<i class="icon-circle glyphicon glyphicon-comment"></i>');
+		comments_number( __( '0 Comments', 'odin' ), __( '1 Comment', 'odin' ), __( '% Comments', 'odin' ) );
+	}
+
+	function odin_posted_small() {
+		if ( is_sticky() && is_home() && ! is_paged() ) {
+			echo '<span class="featured-post">' . __( 'Sticky', 'odin' ) . ' </span>';
+		}
+
+		// Set up and print post meta information.
+		printf( '<span class="entry-date"> <i class="icon-circle glyphicon glyphicon-calendar"></i>&nbsp;<time class="entry-date" datetime="%s">%s</time></span></span>',
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() )
 		);
 	}
 }

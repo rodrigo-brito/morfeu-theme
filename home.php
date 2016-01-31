@@ -37,15 +37,15 @@ $sliders = get_posts( $args ); ?>
 		<?php
 			$active_class = "active";
 			foreach ( $sliders as $post ) : setup_postdata( $post );
-			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
-				<div class="item <?php echo $active_class; ?>" style="background-image: url(<?php echo $large_image_url[0]; ?>);">
-				  <div class="carousel-caption">
-					<h1><?php the_title(); ?></h1>
-					<p><?php the_excerpt(); ?></p>
-				  </div>
-				</div>
-			<?php
-			$active_class = "";
+				$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+					<div class="item <?php echo $active_class; ?>" style="background-image: url(<?php echo $large_image_url[0]; ?>);">
+					  <div class="carousel-caption">
+						<h1><?php the_title(); ?></h1>
+						<p><?php the_excerpt(); ?></p>
+					  </div>
+					</div>
+				<?php
+				$active_class = "";
 			endforeach;
 			wp_reset_postdata();
 		?>
@@ -70,13 +70,7 @@ $sliders = get_posts( $args ); ?>
 					<h2><?php _('Latest posts') ?></h2>
 					<hr>
 				</div>
-				<?php
-					if ( have_posts() ) :
-						while ( have_posts() ) : the_post();
-							get_template_part( 'content', get_post_format() );
-						endwhile;
-					endif;
-				?>
+				<?php get_template_part('loop'); ?>
 			</div>
 			<!-- /.blog -->
 		</main><!-- /#content -->

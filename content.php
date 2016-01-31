@@ -11,10 +11,22 @@
 <div class="<?=  is_single() ? 'col-md-12' : 'col-md-4' ?>">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-			<?php if ( has_post_thumbnail() ): ?>
-			<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
-			<figure class="thumbnail-content" style="background-image: url(<?php echo $large_image_url[0]; ?>);"></figure>
-			<?php endif; ?>
+			<?php
+				if ( has_post_thumbnail() ){
+					$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
+				}else{
+					$large_image_url = get_template_directory_uri().'/assets/images/article-default.jpg';
+				}
+			?>
+			<a href="<?= esc_url( get_permalink() ) ?>">
+				<figure class="thumbnail-content" style="background-image: url('<?php echo isset($large_image_url) ? $large_image_url : ''; ?>');">
+					<?php if ( !is_single() ) : ?>
+						<div class="overlay-thumbnail">
+							<span class="glyphicon glyphicon-eye-open"></span>
+						</div>
+					<?php endif; ?>
+				</figure>
+			</a>
 			<?php
 				if ( is_single() ) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
@@ -24,9 +36,13 @@
 			?>
 		</header><!-- .entry-header -->
 		<div class="conteudo-post">
-			<?php if ( 'post' == get_post_type() ) : ?>
+			<?php if( is_single() ): ?>
+			<div class="entry-meta">
+				<?php odin_posted_on(); ?>
+			</div><!-- .entry-meta -->
+			<?php else: ?>
 				<div class="entry-meta">
-					<?php odin_posted_on(); ?>
+					<?php odin_posted_small(); ?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
 			<?php if ( is_single() ) : ?>

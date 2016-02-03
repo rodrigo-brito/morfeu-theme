@@ -11,7 +11,7 @@
 				 */
 				get_template_part( 'content', get_post_format() );
 				/**
-				 * Remove problems with grid blocks
+				 * Remove problems with Bootstrap grid
 				 */
 				echo $iteration % 3 == 0 ? '<div class="clearfix"></div>' : '';
 				$iteration++;

@@ -1,16 +1,4 @@
-<?php
-/**
- * Template Name: With Sidebar
- *
- * The template for displaying pages with sidebar.
- *
- * @package Odin
- * @since 2.2.0
- */
-
-get_header();
-?>
-
+<?php get_header(); ?>
 	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
 
 			<?php

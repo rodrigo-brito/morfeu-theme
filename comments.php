@@ -1,13 +1,3 @@
-<?php
-/**
- * The template for displaying Comments.
- *
- * The area of the page that contains comments and the comment form.
- *
- * @package Odin
- * @since 1.9.0
- */
-?>
 <div class="col-lg-12">
 	<section id="comments" class="content-wrap" itemscope itemtype="http://schema.org/Comment">
 		<?php if ( post_password_required() ) : ?>

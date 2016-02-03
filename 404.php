@@ -1,11 +1,4 @@
 <?php
-/**
- * The template for displaying 404 pages (Not Found).
- *
- * @package Odin
- * @since 2.2.0
- */
-
 get_header(); ?>
 
 	<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">

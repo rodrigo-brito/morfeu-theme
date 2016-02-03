@@ -1,21 +1,12 @@
-<?php
-/**
- * The template for displaying image attachments.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Odin
- * @since 2.2.0
- */
-
-get_header(); ?>
-
+<?php get_header(); ?>
 	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article <?php post_class(); ?>>
 					<header class="entry-header">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<?php if(get_the_title()): ?>
+							<h1 class="entry-title"><?php the_title(); ?></h1>
+						<?php endif; ?>
 						<div class="entry-meta entry-content">
 							<?php
 								$metadata = wp_get_attachment_metadata();
@@ -42,9 +33,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 				</article>
 			<?php endwhile; ?>
-
 	</main><!-- #main -->
-
 <?php
 get_sidebar();
 get_footer();

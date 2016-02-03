@@ -1,16 +1,17 @@
 <?php
-$args = array(
-	'numberposts'=>5,
-	'post_type'=>'post',
-	'meta_key'=>'_thumbnail_id',
-);
-$sliders = get_posts( $args ); ?>
+	$args = array(
+		'numberposts' 	=> 5,
+		'post_type' 	=> 'post',
+		'meta_key'		=> '_thumbnail_id',
+	);
+	$sliders = get_posts( $args );
+?>
 <div id="carousel-home" class="carousel slide carousel-fade" data-ride="carousel">
 	<!-- Indicators -->
 	<?php if($sliders): ?>
 	<ol class="carousel-indicators">
 	<?php for($i = 0; $i < count($sliders); $i++): ?>
-		<li data-target="#carousel-home" data-slide-to="<?php echo $i; ?>" class="<?php echo $i==0?"active":""; ?>"></li>
+		<li data-target="#carousel-home" data-slide-to="<?php echo $i; ?>" class="<?php echo $i == 0 ? "active" : ""; ?>"></li>
 	<?php endfor; ?>
 	</ol>
 	<!-- Wrapper for slides -->
@@ -32,7 +33,7 @@ $sliders = get_posts( $args ); ?>
 			endforeach;
 			wp_reset_postdata();
 		?>
-	</div>
+	</div><!-- .carousel-inner -->
 
 	<!-- Controls -->
 	<a class="left carousel-control" href="#carousel-home" role="button" data-slide="prev">

@@ -1,14 +1,4 @@
-<?php
-/**
- * The default template for displaying content.
- *
- * Used for both single and index/archive/author/catagory/search/tag.
- *
- * @package Odin
- * @since 2.2.0
- */
-?>
-<div class="<?=  is_single() ? 'col-md-12' : 'col-md-4' ?>">
+<div class="<?php echo  is_single() ? 'col-md-12' : 'col-md-4'; ?>">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
 			<?php
@@ -23,9 +13,9 @@
 					<?php if ( !is_single() ) : ?>
 						<div class="overlay-thumbnail">
 							<span class="glyphicon glyphicon-eye-open"></span>
-						</div>
+						</div><!-- .overlay-thumbnail -->
 					<?php endif; ?>
-				</figure>
+				</figure><!-- .thumbnail-content -->
 			</a>
 			<?php
 				if ( is_single() ) :

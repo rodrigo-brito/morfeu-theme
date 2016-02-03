@@ -1,12 +1,4 @@
-<?php
-/**
- * The template for displaying Search Results pages.
- *
- * @package Odin
- * @since 2.2.0
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
 			<?php if ( have_posts() ) : ?>

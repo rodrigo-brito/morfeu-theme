@@ -1,13 +1,4 @@
-<?php
-/**
- * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till #main div
- *
- * @package Odin
- * @since 2.2.0
- */
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -20,10 +11,6 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/html5.js"></script>
 	<![endif]-->
-
-	<!-- Open Sans - Google Fonts -->
-	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
-
 	<?php wp_head(); ?>
 </head>
 
@@ -32,37 +19,37 @@
 
 		<nav id="main-navigation" class="navbar navbar-default" role="navigation">
 			<div class="container">
-		        <div class="navbar-header">
-		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">
-					<span class="sr-only"><?php _e( 'Toggle navigation', 'odin' ); ?></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-		          <a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php if ( get_theme_mod( 'morfeu_logo' ) ) : ?>
-						<img class="logo" src='<?php echo esc_url( get_theme_mod( 'morfeu_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-					<?php else: ?>
-						<h1 class='site-title'><?php bloginfo( 'name' ); ?></h1>
-					<?php endif; ?>
-		          </a>
-		        </div>
-		        <div class="collapse navbar-collapse navbar-right navbar-main-navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">
+						<span class="sr-only"><?php _e( 'Toggle navigation', 'odin' ); ?></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php if ( get_theme_mod( 'morfeu_logo' ) ) : ?>
+							<img class="logo" src='<?php echo esc_url( get_theme_mod( 'morfeu_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+						<?php else: ?>
+							<h1 class='site-title'><?php bloginfo( 'name' ); ?></h1>
+						<?php endif; ?>
+					</a>
+				</div><!-- .navbar-header -->
+				<div class="collapse navbar-collapse navbar-right navbar-main-navigation">
 					<ul class="nav navbar-nav navbar-right hidden-xs">
-				        <li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-search"></span></a>
-				          <ul class="dropdown-menu clearfix" role="menu">
-				            <li class="li-form">
-				            	<form method="get" class="navbar-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-									<div class="conteudo-form-busca">
-										<input type="search" class="form-control" name="s" id="navbar-search" />
-										<button type="submit" class="form-control btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-									</div>
-								</form>
-							</li>
-				          </ul>
-				        </li>
-				    </ul>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-search"></span></a>
+							<ul class="dropdown-menu clearfix" role="menu">
+								<li class="li-form">
+									<form method="get" class="navbar-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+										<div class="conteudo-form-busca">
+											<input type="search" class="form-control" name="s" id="navbar-search" />
+											<button type="submit" class="form-control btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+										</div>
+									</form>
+								</li><!-- .li-form -->
+							</ul><!-- .dropdown-menu  -->
+						</li><!-- .dropdown -->
+					</ul><!-- .nav -->
 					<?php
 						wp_nav_menu(
 							array(
@@ -76,15 +63,13 @@
 						);
 					?>
 				</div><!-- .navbar-collapse -->
-
-		    </div>
+			</div><!-- .container -->
 		</nav><!-- #main-menu -->
 		<a id="skippy" class="sr-only sr-only-focusable" href="#content">
 			<div class="container">
 				<span class="skiplink-text"><?php _e( 'Skip to content', 'odin' ); ?></span>
 			</div>
 		</a>
-
 	</header><!-- #header -->
 
 	<div id="wrapper" class="container">

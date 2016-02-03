@@ -252,7 +252,6 @@ function odin_breadcrumbs( $homepage = '' ) {
 						$shop_page    = get_post( wc_get_page_id( 'shop' ) );
 						echo '<li><a href="' . get_permalink( $shop_page ) . '">' . get_the_title( $shop_page ) . '</a></li>';
 					}
-					
 					// Gets post type taxonomies.
 					$taxonomy = get_object_taxonomies( 'product' );
 					$taxy = 'product_cat';

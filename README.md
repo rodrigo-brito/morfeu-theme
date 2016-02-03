@@ -1,5 +1,9 @@
+<img src="assets/images/logo.png">
+
 # Morfeu
-### Free WordPress Theme
+## Free WordPress Theme
+### [Odin](http://wpod.in/) be praised
+
 
 ## Quer colaborar? ##
 

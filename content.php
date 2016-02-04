@@ -1,4 +1,4 @@
-<div class="<?php echo  is_single() ? 'col-md-12' : 'col-md-4'; ?>">
+<div class="loop-article <?php echo  is_single() ? 'col-md-12' : 'col-md-4'; ?>" <?php echo  is_single() ? '' : 'data-sr="enter top"'; ?>>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
 			<?php
@@ -29,6 +29,7 @@
 			<?php if( is_single() ): ?>
 			<div class="entry-meta">
 				<?php odin_posted_on(); ?>
+				<hr>
 			</div><!-- .entry-meta -->
 			<?php else: ?>
 				<div class="entry-meta">
@@ -38,15 +39,17 @@
 			<?php if ( is_single() ) : ?>
 				<div class="entry-content">
 					<?php
-						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'odin' ) );
+						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'morfeu' ) );
 						wp_link_pages( array(
-							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'odin' ) . '</span>',
+							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'morfeu' ) . '</span>',
 							'after'       => '</div>',
 							'link_before' => '<span>',
 							'link_after'  => '</span>',
 						) );
 					?>
 				</div><!-- .entry-content -->
+				<hr>
+				<?php the_tags( '<p>Tags: ', ', ', '</p>' ); ?> 
 			<?php endif; ?>
 		</div>
 	</article><!-- #post-## -->

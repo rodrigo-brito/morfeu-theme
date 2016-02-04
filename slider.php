@@ -24,7 +24,9 @@
 						<a href="<?php the_permalink(); ?>">
 						  <div class="carousel-caption">
 							<h1><?php the_title(); ?></h1>
-							<p><?php the_excerpt(); ?></p>
+							<div class="hidden-xs hidden-sm">
+								<p><?php the_excerpt(); ?></p>
+							</div>
 						  </div>
 						</a>
 					</div>
@@ -38,11 +40,11 @@
 	<!-- Controls -->
 	<a class="left carousel-control" href="#carousel-home" role="button" data-slide="prev">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
+		<span class="sr-only"><?php _e('Previous', 'morfeu'); ?></span>
 	</a>
 	<a class="right carousel-control" href="#carousel-home" role="button" data-slide="next">
 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
+		<span class="sr-only"><?php _e('Next', 'morfeu'); ?></span>
 	</a>
 	<?php endif; ?>
 </div>

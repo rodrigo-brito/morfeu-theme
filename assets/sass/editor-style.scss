@@ -1,15 +1,22 @@
 // ==========================================================================
-// Style used to style the TinyMCE editor
+// Theme Style Main
 // ==========================================================================
+
+/*!
+Theme Name: Morfeu
+Theme URI: https://github.com/rodrigo-brito/morfeu-theme
+Description: A flat and clean theme for blogs
+Author URI: http://www.rodrigobrito.net
+Version: 1.0.0
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, translation-ready
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: morfeu
+*/
 
 @import
-        "variables",           // Theme       Custom Variables
         "bootstrap/bootstrap", // Bootstrap   Styles Core
-        "wordpress/wordpress"  // WordPress   Styles Core
+        "wordpress/wordpress", // WordPress   Styles Core
+        "odin/core",           // Odin        Styles Core
+        "layout"               // Theme       Custom Layout
 ;
-
-// Custom Editor Styles
-// ==========================================================================
-body {
-	padding: 10px;
-}

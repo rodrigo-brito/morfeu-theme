@@ -57,7 +57,7 @@ if ( ! function_exists( 'odin_posted_on' ) ) {
 	 */
 	function odin_posted_on() {
 		if ( is_sticky() && is_home() && ! is_paged() ) {
-			echo '<span class="featured-post">' . __( 'Sticky', 'odin' ) . ' </span>';
+			echo '<span class="featured-post">' . __( 'Sticky', 'morfeu' ) . ' </span>';
 		}
 
 		// Set up and print post meta information.
@@ -68,13 +68,16 @@ if ( ! function_exists( 'odin_posted_on' ) ) {
 			get_the_author()
 		);
 
-		printf('<i class="icon-circle glyphicon glyphicon-comment"></i>');
-		comments_number( __( '0 Comments', 'odin' ), __( '1 Comment', 'odin' ), __( '% Comments', 'odin' ) );
+		printf(' <i class="icon-circle glyphicon glyphicon-comment"></i>');
+		comments_number( __( '0 Comments', 'morfeu' ), __( '1 Comment', 'morfeu' ), __( '% Comments', 'morfeu' ) );
+
+		printf(' <i class="icon-circle glyphicon glyphicon-folder-open"></i>');
+		the_category( ', ' );
 	}
 
 	function odin_posted_small() {
 		if ( is_sticky() && is_home() && ! is_paged() ) {
-			echo '<span class="featured-post">' . __( 'Sticky', 'odin' ) . ' </span>';
+			echo '<span class="featured-post">' . __( 'Sticky', 'morfeu' ) . ' </span>';
 		}
 
 		// Set up and print post meta information.

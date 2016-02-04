@@ -212,6 +212,10 @@ h1, h2, h3, h4, h5 {
     padding: 0px 20px 20px 20px;
 }
 
+.loop-article:nth-of-type(3n+4) {
+    clear: both;
+}
+
 //
 // Home
 //
@@ -219,7 +223,6 @@ h1, h2, h3, h4, h5 {
     #content {
         .post {
             &.sticky {
-                padding: 0 20px 20px;
                 border: 1px dashed $brand-info;
             }
         }
@@ -283,9 +286,19 @@ h1, h2, h3, h4, h5 {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+
+        @media (max-width: 400px) {
+          height: 250px;
+        }
+
         .carousel-caption {
             p {
                 font-size: 20px
+            }
+            @media (max-width: 400px) {
+                h1 {
+                  font-size: 25px;
+                }
             }
         }
     }

@@ -21,7 +21,7 @@
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">
-						<span class="sr-only"><?php _e( 'Toggle navigation', 'odin' ); ?></span>
+						<span class="sr-only"><?php _e( 'Toggle navigation', 'morfeu' ); ?></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -67,7 +67,7 @@
 		</nav><!-- #main-menu -->
 		<a id="skippy" class="sr-only sr-only-focusable" href="#content">
 			<div class="container">
-				<span class="skiplink-text"><?php _e( 'Skip to content', 'odin' ); ?></span>
+				<span class="skiplink-text"><?php _e( 'Skip to content', 'morfeu' ); ?></span>
 			</div>
 		</a>
 	</header><!-- #header -->

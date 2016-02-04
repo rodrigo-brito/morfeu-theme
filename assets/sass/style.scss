@@ -3,17 +3,20 @@
 // ==========================================================================
 
 /*!
-Theme Name: Odin
-Author URI: http://wpod.in/
-Description: Odin main stylesheet.
-Author: the Odin team
-Author URI: http://wpod.in/#colaboradores
+Theme Name: Morfeu
+Theme URI: https://github.com/rodrigo-brito/morfeu-theme
+Description: A flat and clean theme for blogs
+Author URI: http://www.rodrigobrito.net
+Version: 1.0.0
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, translation-ready
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: morfeu
 */
 
 @import
         "bootstrap/bootstrap", // Bootstrap   Styles Core
         "wordpress/wordpress", // WordPress   Styles Core
-        //"woocommerce",       // WooCommerce Styles Core
         "odin/core",           // Odin        Styles Core
         "layout"               // Theme       Custom Layout
 ;

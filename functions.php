@@ -11,31 +11,30 @@ if ( ! isset( $content_width ) ) {
  */
 require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
 
-/**
- * Odin Widgets.
- */
-require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';
 
 if ( ! function_exists( 'odin_setup_features' ) ) {
 
 	/**
 	 * Setup theme features.
-	 *
-	 * @since 2.2.0
 	 */
 	function odin_setup_features() {
 
 		/**
 		 * Add support for multiple languages.
 		 */
-		load_theme_textdomain( 'odin', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'morfeu', get_template_directory() . '/languages' );
+
+		/**
+		 * Support Custom Editor Style.
+		 */
+		add_editor_style( 'assets/css/editor-style.css' );
 
 		/**
 		 * Register nav menus.
 		 */
 		register_nav_menus(
 			array(
-				'main-menu' => __( 'Main Menu', 'odin' )
+				'main-menu' => __( 'Main Menu', 'morfeu' )
 			)
 		);
 
@@ -72,10 +71,9 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 			array(
 				'type'           => 'scroll',
 				'footer_widgets' => false,
-				'container'      => 'content',
+				'container'      => 'loop-itens',
 				'wrapper'        => false,
-				'render'         => false,
-				'posts_per_page' => get_option( 'posts_per_page' )
+				'posts_per_page' => get_option('posts_per_page')
 			)
 		);
 
@@ -107,15 +105,13 @@ add_action( 'after_setup_theme', 'odin_setup_features' );
 
 /**
  * Register widget areas.
- *
- * @since 2.2.0
  */
 function odin_widgets_init() {
 	register_sidebar(
 		array(
-			'name' => __( 'Main Sidebar', 'odin' ),
+			'name' => __( 'Main Sidebar', 'morfeu' ),
 			'id' => 'main-sidebar',
-			'description' => __( 'Site Main Sidebar', 'odin' ),
+			'description' => __( 'Site Main Sidebar', 'morfeu' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widgettitle widget-title">',
@@ -128,8 +124,6 @@ add_action( 'widgets_init', 'odin_widgets_init' );
 
 /**
  * Flush Rewrite Rules for new CPTs and Taxonomies.
- *
- * @since 2.2.0
  */
 function odin_flush_rewrite() {
 	flush_rewrite_rules();
@@ -139,8 +133,6 @@ add_action( 'after_switch_theme', 'odin_flush_rewrite' );
 
 /**
  * Load site scripts.
- *
- * @since 2.2.0
  */
 function odin_enqueue_scripts() {
 
@@ -183,9 +175,6 @@ add_action( 'wp_enqueue_scripts', 'odin_enqueue_scripts', 1 );
 
 /**
  * Odin custom stylesheet URI.
- *
- * @since  2.2.0
- *
  * @param  string $uri Default URI.
  * @param  string $dir Stylesheet directory URI.
  *
@@ -202,7 +191,7 @@ add_filter( 'stylesheet_uri', 'odin_stylesheet_uri', 10, 2 );
  */
 function morfeu_customize_register( $wp_customize ) {
     $wp_customize->add_section( 'morfeu_logo_section' , array(
-	    'title'       => __( 'Logo', 'odin' ),
+	    'title'       => __( 'Logo', 'morfeu' ),
 	    'priority'    => 30,
 	    'description' => __('Upload a logo to replace the default site name in the header'),
 	) );
@@ -210,7 +199,7 @@ function morfeu_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'morfeu_logo', array(
-		'label'    => __( 'Logo', 'odin' ),
+		'label'    => __( 'Logo', 'morfeu' ),
 		'section'  => 'morfeu_logo_section',
 		'settings' => 'morfeu_logo',
 	) ) );

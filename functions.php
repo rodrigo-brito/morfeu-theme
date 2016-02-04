@@ -193,7 +193,7 @@ function morfeu_customize_register( $wp_customize ) {
     $wp_customize->add_section( 'morfeu_logo_section' , array(
 	    'title'       => __( 'Logo', 'morfeu' ),
 	    'priority'    => 30,
-	    'description' => __('Upload a logo to replace the default site name in the header'),
+	    'description' => __('Upload a logo to replace the default site name in the header', 'morfeu'),
 	) );
 	$wp_customize->add_setting( 'morfeu_logo', array(
 		'sanitize_callback' => 'esc_url_raw',

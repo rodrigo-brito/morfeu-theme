@@ -3,12 +3,13 @@
 		<header class="entry-header">
 			<?php
 				if ( has_post_thumbnail() ){
-					$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
+					$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+					$large_image_url = $post_thumbnail[0];
 				}else{
 					$large_image_url = get_template_directory_uri().'/assets/images/article-default.jpg';
 				}
 			?>
-			<a href="<?= esc_url( get_permalink() ) ?>">
+			<a href="<?php echo esc_url( get_permalink() ); ?>">
 				<figure class="thumbnail-content" style="background-image: url('<?php echo isset($large_image_url) ? $large_image_url : ''; ?>');">
 					<?php if ( !is_single() ) : ?>
 						<div class="overlay-thumbnail">

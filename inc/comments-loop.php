@@ -28,6 +28,7 @@ if ( ! function_exists( 'odin_comment_loop' ) ) {
 						<div class="media-body">
 							<footer class="comment-meta">
 								<h5 class="media-heading">
+									<span class="author-sinal"><i class="glyphicon glyphicon-education"></i> <?php _e('Author', 'morfeu'); ?></span>
 									<?php echo sprintf( '<strong><span class="fn">%1$s</span></strong>
 														 %2$s <a href="%3$s"><time datetime="%4$s">%5$s %6$s </time></a>
 														 <span class="says"> %7$s</span>',

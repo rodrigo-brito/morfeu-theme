@@ -14,7 +14,4 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 		$(this).tab( 'show' );
 	});
-
-	// Tooltip.
-	$( '.odin-tooltip' ).tooltip();
 });

@@ -17,7 +17,7 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 	/**
 	 * Setup theme features.
 	 */
-	function odin_setup_features() {
+	function morfeu_setup_features() {
 
 		/**
 		 * Add support for multiple languages.
@@ -27,7 +27,7 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		/**
 		 * Support Custom Editor Style.
 		 */
-		add_editor_style( 'assets/css/editor-style.css' );
+		add_editor_style( 'editor-style.css' );
 
 		/**
 		 * Register nav menus.
@@ -49,11 +49,6 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		add_theme_support( 'automatic-feed-links' );
 
 		/**
-		 * For fit in the main grid, define 9 posts per page
-		 */
-		update_option( 'posts_per_page', 9);
-
-		/**
 		 * Support Custom Background.
 		 */
 		$defaults = array(
@@ -64,7 +59,7 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		add_theme_support( 'custom-background', $defaults );
 
 		/**
-		 * Add support for infinite scroll.
+		 * Add support for infinite scroll - Jetpack.
 		 */
 		add_theme_support(
 			'infinite-scroll',
@@ -101,12 +96,12 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 	}
 }
 
-add_action( 'after_setup_theme', 'odin_setup_features' );
+add_action( 'after_setup_theme', 'morfeu_setup_features' );
 
 /**
  * Register widget areas.
  */
-function odin_widgets_init() {
+function morfeu_widgets_init() {
 	register_sidebar(
 		array(
 			'name' => __( 'Main Sidebar', 'morfeu' ),
@@ -120,21 +115,12 @@ function odin_widgets_init() {
 	);
 }
 
-add_action( 'widgets_init', 'odin_widgets_init' );
-
-/**
- * Flush Rewrite Rules for new CPTs and Taxonomies.
- */
-function odin_flush_rewrite() {
-	flush_rewrite_rules();
-}
-
-add_action( 'after_switch_theme', 'odin_flush_rewrite' );
+add_action( 'widgets_init', 'morfeu_widgets_init' );
 
 /**
  * Load site scripts.
  */
-function odin_enqueue_scripts() {
+function morfeu_enqueue_scripts() {
 
 	$template_url = get_template_directory_uri();
 
@@ -171,20 +157,7 @@ function odin_enqueue_scripts() {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'odin_enqueue_scripts', 1 );
-
-/**
- * Odin custom stylesheet URI.
- * @param  string $uri Default URI.
- * @param  string $dir Stylesheet directory URI.
- *
- * @return string      New URI.
- */
-function odin_stylesheet_uri( $uri, $dir ) {
-	return $dir . '/assets/css/style.css';
-}
-
-add_filter( 'stylesheet_uri', 'odin_stylesheet_uri', 10, 2 );
+add_action( 'wp_enqueue_scripts', 'morfeu_enqueue_scripts', 1 );
 
 /**
  * Logo selector for theme customize

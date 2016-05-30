@@ -1,9 +1,9 @@
 {
-  "name": "odin",
-  "description": "Tema base para desenvolvimento em WordPress",
-  "version": "2.2.5",
-  "title": "Odin Framework",
-  "homepage": "http://wpod.in/",
+  "name": "morfeu",
+  "description": "WordPress Theme",
+  "version": "1.0.0",
+  "title": "Morfeu Theme",
+  "homepage": "https://github.com/rodrigo-brito/morfeu-theme",
   "main": "Gruntfile.js",
   "devDependencies": {
     "grunt": "~0.4.5",

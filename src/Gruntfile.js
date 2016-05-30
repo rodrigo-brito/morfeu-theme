@@ -11,7 +11,7 @@ module.exports = function( grunt ) {
 
 		// setting folder templates
 		dirs: {
-			css: '../assets/css',
+			css: '../',
 			js: '../assets/js',
 			sass: '../assets/sass',
 			images: '../assets/images',
@@ -65,7 +65,8 @@ module.exports = function( grunt ) {
 		sass: {
 			dist: {
 				options: {
-					style: 'nested'
+					style: 'expanded',
+					sourcemap: 'none'
 				},
 				files: [{
 					expand: true,

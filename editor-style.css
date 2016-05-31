@@ -4,7 +4,7 @@ Theme URI: https://github.com/rodrigo-brito/morfeu-theme
 Description: A flat and clean theme for blogs
 Author: Rodrigo Brito
 Author URI: http://www.rodrigobrito.net
-Version: 1.0.0
+Version: 1.0.1
 Tags: one-column, white, blue, light, responsive-layout, full-width-template, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -7131,40 +7131,40 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(1) {
-  font-size: 22px!important;
-}
-.widget_tag_cloud a:nth-child(2) {
-  font-size: 27px!important;
-}
-.widget_tag_cloud a:nth-child(3) {
-  font-size: 15px!important;
-}
-.widget_tag_cloud a:nth-child(4) {
   font-size: 28px!important;
 }
-.widget_tag_cloud a:nth-child(5) {
-  font-size: 18px!important;
+.widget_tag_cloud a:nth-child(2) {
+  font-size: 14px!important;
 }
-.widget_tag_cloud a:nth-child(6) {
-  font-size: 23px!important;
-}
-.widget_tag_cloud a:nth-child(7) {
-  font-size: 20px!important;
-}
-.widget_tag_cloud a:nth-child(8) {
-  font-size: 20px!important;
-}
-.widget_tag_cloud a:nth-child(9) {
-  font-size: 21px!important;
-}
-.widget_tag_cloud a:nth-child(10) {
-  font-size: 29px!important;
-}
-.widget_tag_cloud a:nth-child(11) {
+.widget_tag_cloud a:nth-child(3) {
   font-size: 27px!important;
 }
+.widget_tag_cloud a:nth-child(4) {
+  font-size: 24px!important;
+}
+.widget_tag_cloud a:nth-child(5) {
+  font-size: 29px!important;
+}
+.widget_tag_cloud a:nth-child(6) {
+  font-size: 14px!important;
+}
+.widget_tag_cloud a:nth-child(7) {
+  font-size: 16px!important;
+}
+.widget_tag_cloud a:nth-child(8) {
+  font-size: 17px!important;
+}
+.widget_tag_cloud a:nth-child(9) {
+  font-size: 18px!important;
+}
+.widget_tag_cloud a:nth-child(10) {
+  font-size: 32px!important;
+}
+.widget_tag_cloud a:nth-child(11) {
+  font-size: 26px!important;
+}
 .widget_tag_cloud a:nth-child(12) {
-  font-size: 19px!important;
+  font-size: 20px!important;
 }
 
 .wp-video-shortcode {

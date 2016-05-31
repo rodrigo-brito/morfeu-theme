@@ -2,10 +2,10 @@
 Contributors: rodrigo73
 Requires at least: WordPress 4.1
 Tested up to: WordPress 4.5.2
-Version: 1.0
+Version: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, white, blue, light, responsive-layout, full-width-template, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready
+Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready
 
 == Description ==
 A flat and clean theme for blogs.
@@ -45,7 +45,12 @@ GNU General Public License for more details.
 
 == Changelog ==
 
-= 1.0 =
-* Released: May 29, 2016
+= 1.0.0 =
+* Released: Feb 04, 2016
 
 Initial release
+
+= 1.0.1 =
+* Released: May 29, 2016
+
+Fixing coding standards and organize style

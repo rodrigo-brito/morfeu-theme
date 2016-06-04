@@ -2,7 +2,7 @@
 Contributors: rodrigo73
 Requires at least: WordPress 4.1
 Tested up to: WordPress 4.5.2
-Version: 1.0.2
+Version: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready
@@ -43,6 +43,16 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+External Resources
+- Bootstrap (Copyright Twitter, released under the terms of the MIT license)
+- jQuery (Copyright jQuery Foundation, released under terms of the MIT license)
+- Html5shiv (Copyright Alexander Farkas, Jonathan Neal, Paul Irish and John-David Dalton, released under terms of the MIT license)
+- FitVids (Copyright Chris Coyier and Paravel, released under terms of the WTFPL license)
+- ScrollReveal (Copyright Julian Lloyd, released under terms of the MIT license)
+
+Images used in screenshot
+- Photos used photographed by author (Copyright Rodrigo Brito)
+
 == Changelog ==
 
 = 1.0.0 =
@@ -54,3 +64,13 @@ Initial release
 * Released: May 29, 2016
 
 Fixing coding standards and organize style
+
+= 1.0.2 =
+* Released: May 29, 2016
+
+Removing deprecated tags
+
+= 1.0.3 =
+* Released: May 29, 2016
+
+Improvements in the theme description and screenshots

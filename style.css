@@ -1,11 +1,11 @@
 /*!
 Theme Name: Morfeu
 Theme URI: https://github.com/rodrigo-brito/morfeu-theme
-Description: A flat and clean theme for blogs
+Description: Morfeu is a simple, clean and responsive theme for blogs, magazines and business websites. Features include a front page template with a full-width slider for featured posts, as well as a beautiful and fluid grid system. Made to be easy to use and fast.
 Author: Rodrigo Brito
 Author URI: http://www.rodrigobrito.net
-Version: 1.0.3
-Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready
+Version: 1.0.5
+Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-header, custom-background, custom-menu, featured-images, full-width-template, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: morfeu
@@ -7131,40 +7131,40 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(1) {
-  font-size: 29px!important;
+  font-size: 30px!important;
 }
 .widget_tag_cloud a:nth-child(2) {
-  font-size: 23px!important;
+  font-size: 25px!important;
 }
 .widget_tag_cloud a:nth-child(3) {
-  font-size: 18px!important;
+  font-size: 15px!important;
 }
 .widget_tag_cloud a:nth-child(4) {
-  font-size: 19px!important;
+  font-size: 24px!important;
 }
 .widget_tag_cloud a:nth-child(5) {
-  font-size: 21px!important;
+  font-size: 22px!important;
 }
 .widget_tag_cloud a:nth-child(6) {
-  font-size: 30px!important;
+  font-size: 22px!important;
 }
 .widget_tag_cloud a:nth-child(7) {
-  font-size: 13px!important;
+  font-size: 23px!important;
 }
 .widget_tag_cloud a:nth-child(8) {
-  font-size: 30px!important;
+  font-size: 32px!important;
 }
 .widget_tag_cloud a:nth-child(9) {
   font-size: 31px!important;
 }
 .widget_tag_cloud a:nth-child(10) {
-  font-size: 16px!important;
+  font-size: 17px!important;
 }
 .widget_tag_cloud a:nth-child(11) {
-  font-size: 26px!important;
+  font-size: 18px!important;
 }
 .widget_tag_cloud a:nth-child(12) {
-  font-size: 31px!important;
+  font-size: 16px!important;
 }
 
 .wp-video-shortcode {
@@ -7281,6 +7281,12 @@ h1, h2, h3, h4, h5 {
   -moz-box-shadow: 0 0 15px #888;
   -webkit-box-shadow: 0 0 15px #888;
   box-shadow: 0 0 15px #888;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .navbar-brand {

@@ -72,6 +72,14 @@ h1, h2, h3, h4, h5 {
     -moz-box-shadow: 0 0 15px #888;
     -webkit-box-shadow: 0 0 15px #888;
     box-shadow: 0 0 15px #888;
+
+    //Custom Background
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .navbar-brand {

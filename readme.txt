@@ -2,18 +2,21 @@
 Contributors: rodrigo73
 Requires at least: WordPress 4.1
 Tested up to: WordPress 4.5.2
-Version: 1.0.3
+Version: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready
+Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-header, custom-background, custom-menu, featured-images, full-width-template, translation-ready
 
 == Description ==
-A flat and clean theme for blogs.
 
-* Mobile-first, Responsive Layout
+Morfeu is a simple, clean and responsive theme for blogs, magazines and business websites. Features include a front page template with a full-width slider for featured posts, as well as a beautiful and fluid grid system. Made to be easy to use and fast.
+
+* Mobile-first, Responsive Layout (Bootstrap)
 * Featured posts on homepage (Slider)
 * Slider full-width
 * Pages full-width / with sidebar
+* Custom header
+* Custom background
 * Grid display with ScrollReveal
 * Ready for infinite-scroll (JetPack)
 * Editor style
@@ -74,3 +77,13 @@ Removing deprecated tags
 * Released: May 29, 2016
 
 Improvements in the theme description and screenshots
+
+= 1.0.4 =
+* Released: Jun 14, 2016
+
+Enable custom header
+
+= 1.0.5 =
+* Released: Jun 23, 2016
+
+Update description and general instructions

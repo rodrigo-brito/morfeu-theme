@@ -43,20 +43,20 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		/*
+		 * Add custom header suport.
+		 */
+		add_theme_support( 'custom-header', array('header-text' => false) );
+
 		/**
-		 * Add feed link.
+		 * Add feed link suport.
 		 */
 		add_theme_support( 'automatic-feed-links' );
 
 		/**
-		 * Support Custom Background.
+		 * Add custom background suport.
 		 */
-		$defaults = array(
-			'default-color' => '',
-			'default-image' => '',
-		);
-
-		add_theme_support( 'custom-background', $defaults );
+		add_theme_support( 'custom-background' );
 
 		/**
 		 * Add support for infinite scroll - Jetpack.

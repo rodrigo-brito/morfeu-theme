@@ -21,6 +21,7 @@
 		"jQuery": false,
 		"wp": false,
 		"console": true,
-		"alert": true
+		"alert": true,
+		"scrollReveal": true
 	}
 }

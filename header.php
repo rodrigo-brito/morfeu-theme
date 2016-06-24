@@ -17,7 +17,7 @@
 <body <?php body_class(); ?>>
 	<header role="banner">
 
-		<nav id="main-navigation" class="navbar navbar-default" role="navigation">
+		<nav id="main-navigation" class="navbar navbar-default" style="background-image: url('<?php header_image(); ?>')" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odin v2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-04 17:10-0300\n"
-"PO-Revision-Date: 2016-02-04 17:11-0300\n"
+"POT-Creation-Date: 2016-06-25 23:47-0300\n"
+"PO-Revision-Date: 2016-06-25 23:48-0300\n"
 "Last-Translator: Rafael Funchal <rafaelfunchal@gmail.com>\n"
 "Language-Team: WordPress Brasil Group\n"
 "Language: Portuguese\n"
@@ -138,12 +138,12 @@ msgid "Next"
 msgstr "Próximo"
 
 # @ odin
-#: ../header.php:24
+#: ../header.php:18
 msgid "Toggle navigation"
 msgstr "Alternar navegação"
 
 # @ odin
-#: ../header.php:70
+#: ../header.php:64
 msgid "Skip to content"
 msgstr "Pular para o conteúdo"
 
@@ -169,20 +169,20 @@ msgid "Main Menu"
 msgstr "Menu Principal"
 
 # @ odin
-#: ../functions.php:112
+#: ../functions.php:107
 msgid "Main Sidebar"
 msgstr "Sidebar Principal"
 
 # @ odin
-#: ../functions.php:114
+#: ../functions.php:109
 msgid "Site Main Sidebar"
 msgstr "Sidebar principal do site"
 
-#: ../functions.php:194 ../functions.php:202
+#: ../functions.php:168 ../functions.php:176
 msgid "Logo"
 msgstr "Logo"
 
-#: ../functions.php:196
+#: ../functions.php:170
 msgid "Upload a logo to replace the default site name in the header"
 msgstr "Envie uma logo para substituir o nome padão do site no cabeçalho"
 
@@ -225,14 +225,18 @@ msgid "Search"
 msgstr "Pesquisar"
 
 # @ odin
-#: ../content.php:42
+#: ../content.php:43
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continue lendo <span class=\"meta-nav\">&rarr;</span>"
 
 # @ odin
-#: ../content.php:44 ../content-page.php:9
+#: ../content.php:45 ../content-page.php:10
 msgid "Pages:"
 msgstr "Páginas:"
+
+#: ../content.php:53
+msgid "Tags: "
+msgstr "Tags: "
 
 # @ odin
 #: ../search.php:7
@@ -305,32 +309,36 @@ msgid "Pingback:"
 msgstr "Pingback:"
 
 # @ odin
-#: ../inc/comments-loop.php:18 ../inc/comments-loop.php:41
+#: ../inc/comments-loop.php:18 ../inc/comments-loop.php:42
 msgid "Edit"
 msgstr "Editar"
 
+#: ../inc/comments-loop.php:31
+msgid "Author"
+msgstr "Autor"
+
 # @ odin
-#: ../inc/comments-loop.php:34
+#: ../inc/comments-loop.php:35
 msgid "in"
 msgstr "em"
 
 # @ odin
-#: ../inc/comments-loop.php:37
+#: ../inc/comments-loop.php:38
 msgid "at"
 msgstr "as"
 
 # @ odin
-#: ../inc/comments-loop.php:38
+#: ../inc/comments-loop.php:39
 msgid "said:"
 msgstr "disse:"
 
 # @ odin
-#: ../inc/comments-loop.php:44
+#: ../inc/comments-loop.php:45
 msgid "Your comment is awaiting moderation."
 msgstr "Seu comentário está aguardando moderação."
 
 # @ odin
-#: ../inc/comments-loop.php:53
+#: ../inc/comments-loop.php:54
 msgid "Respond"
 msgstr "Responder"
 
@@ -338,6 +346,10 @@ msgstr "Responder"
 #: ../inc/template-tags.php:60 ../inc/template-tags.php:80
 msgid "Sticky"
 msgstr "Destacado"
+
+#: ../inc/template-tags.php:64
+msgid "By"
+msgstr "Por"
 
 # @ odin
 #~ msgid "Submit"

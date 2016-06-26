@@ -50,7 +50,7 @@
 					?>
 				</div><!-- .entry-content -->
 				<hr>
-				<?php the_tags( '<p>Tags: ', ', ', '</p>' ); ?> 
+				<?php the_tags( '<p>' . __( 'Tags: ', 'morfeu' ), ', ', '</p>' ); ?>
 			<?php endif; ?>
 		</div>
 	</article><!-- #post-## -->

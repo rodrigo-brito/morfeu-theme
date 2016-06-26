@@ -130,6 +130,10 @@ function morfeu_enqueue_scripts() {
 	// jQuery.
 	wp_enqueue_script( 'jquery' );
 
+	//Html5Shiv
+	wp_enqueue_script( 'morfeu-html5shiv', $template_url . '/assets/js/html5.js' );
+    wp_script_add_data( 'morfeu-html5shiv', 'conditional', 'lt IE 9' );
+
 	// General scripts.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		// Scroll reveal.
@@ -147,9 +151,6 @@ function morfeu_enqueue_scripts() {
 		// Grunt main file with Bootstrap, FitVids and others libs.
 		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 	}
-
-	// Grunt watch livereload in the browser.
-	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
 
 	// Load Thread comments WordPress script.
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
@@ -188,11 +189,6 @@ require_once get_template_directory() . '/core/helpers.php';
  * Comments loop.
  */
 require_once get_template_directory() . '/inc/comments-loop.php';
-
-/**
- * WP optimize functions.
- */
-require_once get_template_directory() . '/inc/optimize.php';
 
 /**
  * Custom template tags.

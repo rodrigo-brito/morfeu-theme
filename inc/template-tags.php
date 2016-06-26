@@ -61,7 +61,7 @@ if ( ! function_exists( 'odin_posted_on' ) ) {
 		}
 
 		// Set up and print post meta information.
-		printf( '<span class="entry-date"> <i class="icon-circle glyphicon glyphicon-calendar"></i> <time class="entry-date" datetime="%s">%s</time></span> <i class="icon-circle glyphicon glyphicon-user"></i> <span class="author vcard"> By <a class="url fn n" href="%s" rel="author">%s</a></span>',
+		printf( '<span class="entry-date"> <i class="icon-circle glyphicon glyphicon-calendar"></i> <time class="entry-date" datetime="%s">%s</time></span> <i class="icon-circle glyphicon glyphicon-user"></i> <span class="author vcard">' . __( 'By', 'morfeu' ) . '<a class="url fn n" href="%s" rel="author">%s</a></span>',
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),

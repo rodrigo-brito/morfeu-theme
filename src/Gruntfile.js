@@ -194,7 +194,7 @@ module.exports = function( grunt ) {
 					'!../**.md',
 					'!<%= dirs.sass %>/**',
 					'!<%= dirs.js %>/bootstrap/**',
-					'!<%= dirs.js %>/libs/**',
+					'<%= dirs.js %>/libs/**',
 					'!../**.zip',
 					'<%= dirs.js %>/main.min.js'
 				],

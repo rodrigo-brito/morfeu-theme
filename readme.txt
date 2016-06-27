@@ -2,7 +2,7 @@
 Contributors: rodrigo73
 Requires at least: WordPress 4.1
 Tested up to: WordPress 4.5.2
-Version: 1.0.6
+Version: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-header, custom-background, custom-menu, featured-images, full-width-template, translation-ready
@@ -90,5 +90,20 @@ Update description and general instructions
 
 = 1.0.6 =
 * Released: Jun 25, 2016
+
+Fix WordPress coding standards
+
+= 1.0.7 =
+* Released: Jun 26, 2016
+
+Reduce TinyMCE editor style and fix select issues
+
+= 1.0.8 =
+* Released: Jun 26, 2016
+
+Fix HTML coding standards
+
+= 1.0.9 =
+* Released: Jun 26, 2016
 
 Fix WordPress coding standards

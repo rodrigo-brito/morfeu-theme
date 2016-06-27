@@ -25,7 +25,7 @@
 						  <div class="carousel-caption">
 							<h1><?php the_title(); ?></h1>
 							<div class="hidden-xs hidden-sm">
-								<p><?php the_excerpt(); ?></p>
+								<?php the_excerpt(); ?>
 							</div>
 						  </div>
 						</a>

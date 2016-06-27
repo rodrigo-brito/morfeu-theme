@@ -1,23 +1,20 @@
 <?php get_header(); ?>
 	</div><!-- .row -->
-</div><!-- .wrapper -->
+</div><!-- #wrapper -->
 <!-- slider for latest posts -->
 <?php get_template_part('slider'); ?>
 <div id="wrapper" class="container">
 	<div class="row">
 		<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
 			<div id="blog" class="row">
-				<div class="container"  data-sr="enter top">
-					<h2><?php _('Latest posts') ?></h2>
-					<hr>
-				</div>
+				<hr>
 				<?php get_template_part('loop'); ?>
 			</div><!-- .blog -->
 		</main><!-- #content -->
 	</div><!-- .row -->
 </div><!-- #wrapper -->
 <!-- For close in footer.php -->
-<div id="wrapper">
+<div class="container">
 	<div class="row">
 <?php
 get_footer();

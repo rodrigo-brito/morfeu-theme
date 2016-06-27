@@ -1,4 +1,4 @@
-<div class="loop-article <?php echo  is_single() ? 'col-md-12' : 'col-md-4'; ?>" <?php echo  is_single() ? '' : 'data-sr="enter top"'; ?>>
+<div class="loop-article <?php echo  is_single() ? '' : 'col-md-4'; ?>" <?php echo  is_single() ? '' : 'data-sr="enter top"'; ?>>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
 			<?php

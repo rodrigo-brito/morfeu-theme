@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odin v2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-25 23:47-0300\n"
-"PO-Revision-Date: 2016-06-25 23:48-0300\n"
+"POT-Creation-Date: 2016-06-26 23:55-0300\n"
+"PO-Revision-Date: 2016-06-26 23:56-0300\n"
 "Last-Translator: Rafael Funchal <rafaelfunchal@gmail.com>\n"
 "Language-Team: WordPress Brasil Group\n"
 "Language: Portuguese\n"
@@ -14,7 +14,8 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -119,14 +120,12 @@ msgstr "Todos os direitos reservados"
 #, php-format
 msgid ""
 "Developed by <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">Rodrigo "
-"Brito</a> with <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">Odin "
-"&hearts;</a>  - Powered by <a href=\"%s\" rel=\"nofollow\" target=\"_blank"
-"\">WordPress</a>."
+"Brito</a> with Odin &hearts;  - Powered by <a href=\"%s\" rel=\"nofollow\" "
+"target=\"_blank\">WordPress</a>."
 msgstr ""
 "Desenvolvido por <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">Rodrigo "
-"Brito</a> com a força de <a href=\"%s\" rel=\"nofollow\" target=\"_blank"
-"\">Odin &hearts;</a>  - Powered by <a href=\"%s\" rel=\"nofollow\" target="
-"\"_blank\">WordPress</a>."
+"Brito</a> com Odin &hearts;  - Powered by <a href=\"%s\" rel=\"nofollow\" "
+"target=\"_blank\">WordPress</a>."
 
 # @ odin
 #: ../slider.php:43
@@ -146,11 +145,6 @@ msgstr "Alternar navegação"
 #: ../header.php:64
 msgid "Skip to content"
 msgstr "Pular para o conteúdo"
-
-# @ odin
-#: ../home.php:11
-msgid "Latest posts"
-msgstr "Artigos Relacionados"
 
 # @ odin
 #: ../404.php:6
@@ -350,6 +344,10 @@ msgstr "Destacado"
 #: ../inc/template-tags.php:64
 msgid "By"
 msgstr "Por"
+
+# @ odin
+#~ msgid "Latest posts"
+#~ msgstr "Artigos Relacionados"
 
 # @ odin
 #~ msgid "Submit"

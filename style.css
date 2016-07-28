@@ -4,7 +4,7 @@ Theme URI: https://github.com/rodrigo-brito/morfeu-theme
 Description: Morfeu is a simple, clean and responsive theme for blogs, magazines and business websites. Features include a front page template with a full-width slider for featured posts, as well as a beautiful and fluid grid system. Made to be easy to use and fast.
 Author: Rodrigo Brito
 Author URI: http://www.rodrigobrito.net
-Version: 1.1.0
+Version: 1.1.2
 Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-header, custom-background, custom-menu, featured-images, full-width-template, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -7131,40 +7131,40 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(1) {
-	font-size: 18px!important;
+	font-size: 25px!important;
 }
 .widget_tag_cloud a:nth-child(2) {
-	font-size: 24px!important;
+	font-size: 14px!important;
 }
 .widget_tag_cloud a:nth-child(3) {
-	font-size: 22px!important;
+	font-size: 32px!important;
 }
 .widget_tag_cloud a:nth-child(4) {
-	font-size: 31px!important;
+	font-size: 22px!important;
 }
 .widget_tag_cloud a:nth-child(5) {
-	font-size: 22px!important;
-}
-.widget_tag_cloud a:nth-child(6) {
-	font-size: 13px!important;
-}
-.widget_tag_cloud a:nth-child(7) {
-	font-size: 16px!important;
-}
-.widget_tag_cloud a:nth-child(8) {
-	font-size: 22px!important;
-}
-.widget_tag_cloud a:nth-child(9) {
 	font-size: 28px!important;
 }
+.widget_tag_cloud a:nth-child(6) {
+	font-size: 14px!important;
+}
+.widget_tag_cloud a:nth-child(7) {
+	font-size: 30px!important;
+}
+.widget_tag_cloud a:nth-child(8) {
+	font-size: 31px!important;
+}
+.widget_tag_cloud a:nth-child(9) {
+	font-size: 32px!important;
+}
 .widget_tag_cloud a:nth-child(10) {
-	font-size: 25px!important;
+	font-size: 23px!important;
 }
 .widget_tag_cloud a:nth-child(11) {
-	font-size: 25px!important;
+	font-size: 13px!important;
 }
 .widget_tag_cloud a:nth-child(12) {
-	font-size: 29px!important;
+	font-size: 16px!important;
 }
 
 .wp-video-shortcode {
@@ -7235,7 +7235,6 @@ ul.page-numbers > li > span.current, ul.page-numbers > li > span.current:hover, 
 }
 
 html {
-	position: relative;
 	min-height: 100%;
 	overflow-y: scroll;
 }
@@ -7293,12 +7292,14 @@ select {
 	background-position: center center;
 }
 
-.navbar-brand {
-	height: 100px;
+.navbar-brand, .custom-logo-link {
+	height: auto;
 }
-.navbar-brand img.logo {
-	max-height: 100%;
-	height: 100%;
+.navbar-brand img.logo, .navbar-brand img.custom-logo, .custom-logo-link img.logo, .custom-logo-link img.custom-logo {
+	height: auto;
+	width: 100%;
+	max-width: 300px;
+	max-height: 100px;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
@@ -7514,13 +7515,27 @@ select {
 	z-index: 2;
 }
 
-#searchform button, #searchform input {
+.searchform {
+	margin: 10px 0;
+}
+.searchform button, .searchform input {
 	z-index: 0;
 }
-
-input#s {
+.searchform input[name="s"] {
 	height: auto;
 	padding: 5px 12px;
+}
+
+.seachform-navbar .dropdown-menu {
+	padding: 10px;
+}
+.seachform-navbar .dropdown-menu .search-drop {
+	width: 240px;
+	max-width: 100%;
+}
+.seachform-navbar .dropdown-menu .search-drop .searchform {
+	margin: 0;
+	padding: 0;
 }
 
 #footer {

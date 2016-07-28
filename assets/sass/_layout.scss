@@ -19,7 +19,6 @@
 // Main
 // ==========================================================================
 html {
-	position: relative;
 	min-height: 100%;
 	overflow-y: scroll;
 }
@@ -55,14 +54,14 @@ select {
 //
 // Title, description and image
 //
-.page-header {
-	margin: 20px 0 20px;
-	.site-title {}
-	.site-description {
-		font-size: 16px;
-		font-style: italic;
+	.page-header {
+		margin: 20px 0 20px;
+		.site-title {}
+		.site-description {
+			font-size: 16px;
+			font-style: italic;
+		}
 	}
-}
 }
 
 // ==========================================================================
@@ -78,22 +77,25 @@ select {
 	-webkit-box-shadow: 0 0 15px #888;
 	box-shadow: 0 0 15px #888;
 
-//Custom Background
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center center;
+	//Custom Background
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
-.navbar-brand {
-	height: 100px;
-	img.logo{
-		max-height: 100%;
-		height: 100%;
+.navbar-brand, .custom-logo-link {
+	height: auto;
+	img.logo, img.custom-logo {
+		height: auto;
+		width: 100%;
+		max-width: 300px;
+		max-height: 100px;
 	}
 }
+
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
 	color: #555;
 	background: none;
@@ -348,13 +350,30 @@ background-position: center center;
 // ==========================================================================
 // Serach
 // ==========================================================================
-#searchform button, #searchform input{
-	z-index: 0;
+.searchform{
+	margin: 10px 0;
+	button, input{
+		z-index: 0;
+	}
+
+	input[name="s"] {
+		height: auto;
+		padding: 5px 12px;
+	}
 }
 
-input#s {
-	height: auto;
-	padding: 5px 12px;
+.seachform-navbar {
+	.dropdown-menu {
+		padding: 10px;
+		.search-drop {
+			width: 240px;
+			max-width: 100%;
+			.searchform{
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
 }
 // ==========================================================================
 // Footer

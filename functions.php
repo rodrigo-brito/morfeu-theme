@@ -93,6 +93,11 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+
+		/**
+		 * Add suport for custom logo in customizer
+		 */
+		add_theme_support( 'custom-logo' );
 	}
 }
 
@@ -131,16 +136,16 @@ function morfeu_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	//Html5Shiv
-	wp_enqueue_script( 'morfeu-html5shiv', $template_url . '/assets/js/html5.js' );
+	wp_enqueue_script( 'morfeu-html5shiv', $template_url . '/assets/js/polyfill.min.js.js' );
     wp_script_add_data( 'morfeu-html5shiv', 'conditional', 'lt IE 9' );
 
 	// General scripts.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		// Scroll reveal.
-		wp_enqueue_script( 'scroll-reveal', $template_url . '/assets/js/libs/scrollReveal.min.js', array(), null, true );
+		wp_enqueue_script( 'scroll-reveal', $template_url . '/assets/js/libs/scrollreveal.js', array(), null, true );
 
 		// Bootstrap.
-		wp_enqueue_script( 'bootstrap', $template_url . '/assets/js/libs/bootstrap.min.js', array(), null, true );
+		wp_enqueue_script( 'bootstrap', $template_url . '/assets/js/bootstrap.min.js', array(), null, true );
 
 		// FitVids.
 		wp_enqueue_script( 'fitvids', $template_url . '/assets/js/libs/jquery.fitvids.js', array(), null, true );
@@ -149,7 +154,7 @@ function morfeu_enqueue_scripts() {
 		wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
 	} else {
 		// Grunt main file with Bootstrap, FitVids and others libs.
-		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
+		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/scripts.min.js', array(), null, true );
 	}
 
 	// Load Thread comments WordPress script.
@@ -161,24 +166,17 @@ function morfeu_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'morfeu_enqueue_scripts', 1 );
 
 /**
- * Logo selector for theme customize
+ * Morfeu Custom Logo
  */
-function morfeu_customize_register( $wp_customize ) {
-    $wp_customize->add_section( 'morfeu_logo_section' , array(
-	    'title'       => __( 'Logo', 'morfeu' ),
-	    'priority'    => 30,
-	    'description' => __('Upload a logo to replace the default site name in the header', 'morfeu'),
-	) );
-	$wp_customize->add_setting( 'morfeu_logo', array(
-		'sanitize_callback' => 'esc_url_raw',
-	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'morfeu_logo', array(
-		'label'    => __( 'Logo', 'morfeu' ),
-		'section'  => 'morfeu_logo_section',
-		'settings' => 'morfeu_logo',
-	) ) );
+function morfeu_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+		the_custom_logo();
+	} else { ?>
+		<a class="navbar-brand clearfix" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<h1 class='site-title'><?php bloginfo( 'name' ); ?></h1>
+		</a>
+	<?php }
 }
-add_action( 'customize_register', 'morfeu_customize_register' );
 
 /**
  * Core Helpers.

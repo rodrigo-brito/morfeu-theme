@@ -1,8 +1,8 @@
 === Morfeu ===
 Contributors: rodrigo73
-Requires at least: WordPress 4.1
-Tested up to: WordPress 4.5.2
-Version: 1.1.0
+Requires at least: WordPress 4.5
+Tested up to: WordPress 4.5.3
+Version: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, full-width-template, two-columns, right-sidebar, custom-header, custom-background, custom-menu, featured-images, full-width-template, translation-ready
@@ -22,7 +22,9 @@ Morfeu is a simple, clean and responsive theme for blogs, magazines and business
 * Editor style
 * And more...
 
-For more information about Morfeu Theme please go to https://github.com/rodrigo-brito/morfeu-theme.
+For more information about Morfeu Theme please go to [GitHub Repository](https://github.com/rodrigo-brito/morfeu-theme).
+
+The Morfeu Theme is ready to be used with SASS. The archives of assets SASS folder must be compiled and saved in the theme root. The automation files for Grunt JS can be found in the [theme repository](https://github.com/rodrigo-brito/morfeu-theme).
 
 == Installation ==
 
@@ -34,6 +36,7 @@ For more information about Morfeu Theme please go to https://github.com/rodrigo-
 
 == Copyright ==
 
+Morfeu WordPress Theme, Copyright 2016 Rodrigo Brito
 Morfeu is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -54,7 +57,7 @@ External Resources
 - ScrollReveal (Copyright Julian Lloyd, released under terms of the MIT license)
 
 Images used in screenshot
-- Photos used photographed by author (Copyright Rodrigo Brito)
+- Photos used were photographed by author (Copyright Rodrigo Brito)
 
 == Changelog ==
 
@@ -112,3 +115,13 @@ Fix WordPress coding standards
 * Released: Jun 27, 2016
 
 Changes for display author
+
+= 1.1.1 =
+* Released: Jul 26, 2016
+
+Fix WordPress coding standards
+
+= 1.1.2 =
+* Released: Jul 27, 2016
+
+Include SASS base files

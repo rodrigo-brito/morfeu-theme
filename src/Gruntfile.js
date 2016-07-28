@@ -35,15 +35,16 @@ module.exports = function( grunt ) {
 		uglify: {
 			dist: {
 				files: {
-					'<%= dirs.js %>/main.min.js': [
+					'<%= dirs.js %>/scripts.min.js': [
 						'<%= dirs.js %>/libs/*.js', // External libs/plugins
+						'<%= dirs.js %>/bootstrap.min.js', // Bootstrap
 						'<%= dirs.js %>/main.js'    // Custom JavaScript
 					]
 				}
 			},
 			bootstrap: {
 				files: {
-					'<%= dirs.js %>/libs/bootstrap.min.js': [
+					'<%= dirs.js %>/bootstrap.min.js': [
 						'<%= dirs.js %>/bootstrap/transition.js',
 						'<%= dirs.js %>/bootstrap/alert.js',
 						'<%= dirs.js %>/bootstrap/button.js',
@@ -192,9 +193,9 @@ module.exports = function( grunt ) {
 					'../**',
 					'!../src/**',
 					'!../**.md',
-					'!<%= dirs.sass %>/**',
-					'!<%= dirs.js %>/bootstrap/**',
-					'<%= dirs.js %>/libs/**',
+					//'!<%= dirs.sass %>/**',
+					//'!<%= dirs.js %>/bootstrap/**',
+					//'<%= dirs.js %>/libs/**',
 					'!../**.zip',
 					'<%= dirs.js %>/main.min.js'
 				],

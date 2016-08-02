@@ -10,7 +10,7 @@
 				}
 			?>
 			<a href="<?php echo esc_url( get_permalink() ); ?>">
-				<figure class="thumbnail-content" style="background-image: url('<?php echo isset($large_image_url) ? $large_image_url : ''; ?>');">
+				<figure class="thumbnail-content <?php echo !has_post_thumbnail() && is_single() ? 'hidden' : '' ?>" style="background-image: url('<?php echo isset($large_image_url) ? $large_image_url : ''; ?>');">
 					<?php if ( !is_single() ) : ?>
 						<div class="overlay-thumbnail">
 							<span class="glyphicon glyphicon-eye-open"></span>

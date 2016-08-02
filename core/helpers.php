@@ -239,7 +239,7 @@ function odin_breadcrumbs( $homepage = '' ) {
 
 		// First level.
 		echo '<ol id="breadcrumbs" class="breadcrumb">';
-		echo '<li><a href="' . esc_url( home_url() ) . '" rel="nofollow">' . $homepage . '</a></li>';
+		echo '<li><a href="' . esc_url( home_url( '/' ) ) . '" rel="nofollow">' . $homepage . '</a></li>';
 
 		// Single post.
 		if ( is_single() && ! is_attachment() ) {

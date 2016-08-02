@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
 
 
-if ( ! function_exists( 'odin_setup_features' ) ) {
+if ( ! function_exists( 'morfeu_setup_features' ) ) {
 
 	/**
 	 * Setup theme features.
@@ -129,11 +129,8 @@ function morfeu_enqueue_scripts() {
 
 	$template_url = get_template_directory_uri();
 
-	// Loads Odin main stylesheet.
-	wp_enqueue_style( 'odin-style', get_stylesheet_uri(), array(), null, 'all' );
-
-	// jQuery.
-	wp_enqueue_script( 'jquery' );
+	// Loads morfeu main stylesheet.
+	wp_enqueue_style( 'morfeu-style', get_stylesheet_uri(), array(), null, 'all' );
 
 	//Html5Shiv
 	wp_enqueue_script( 'morfeu-html5shiv', $template_url . '/assets/js/polyfill.min.js.js' );
@@ -145,16 +142,16 @@ function morfeu_enqueue_scripts() {
 		wp_enqueue_script( 'scroll-reveal', $template_url . '/assets/js/libs/scrollreveal.js', array(), null, true );
 
 		// Bootstrap.
-		wp_enqueue_script( 'bootstrap', $template_url . '/assets/js/bootstrap.min.js', array(), null, true );
+		wp_enqueue_script( 'bootstrap', $template_url . '/assets/js/bootstrap.min.js', array( 'jquery' ), null, true );
 
 		// FitVids.
-		wp_enqueue_script( 'fitvids', $template_url . '/assets/js/libs/jquery.fitvids.js', array(), null, true );
+		wp_enqueue_script( 'fitvids', $template_url . '/assets/js/libs/jquery.fitvids.js', array( 'jquery' ), null, true );
 
 		// Main jQuery.
-		wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
+		wp_enqueue_script( 'morfeu-main', $template_url . '/assets/js/main.js', array( 'jquery' ), null, true );
 	} else {
 		// Grunt main file with Bootstrap, FitVids and others libs.
-		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/scripts.min.js', array(), null, true );
+		wp_enqueue_script( 'morfeu-main-min', $template_url . '/assets/js/scripts.min.js', array( 'jquery' ), null, true );
 	}
 
 	// Load Thread comments WordPress script.
@@ -172,7 +169,7 @@ function morfeu_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 		the_custom_logo();
 	} else { ?>
-		<a class="navbar-brand clearfix" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		<a class="navbar-brand clearfix" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 			<h1 class='site-title'><?php bloginfo( 'name' ); ?></h1>
 		</a>
 	<?php }

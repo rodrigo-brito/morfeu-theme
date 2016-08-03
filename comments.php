@@ -49,7 +49,7 @@
 			$fields 		=  array(
 				'author' => '<div class="comment-form-author form-group">' . '<label for="author">' . __( 'Name', 'morfeu' ) . ( $req ? ' <span class="required text-danger">*</span>' : '' ) . '</label> ' .
 				            '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $html_req . ' /></div>',
-				'email'  => '<div class="comment-form-email form-group"><label for="email">' . __( 'E-mail', 'morfeu' ) . ( $req ? ' <span class="required text-danger">*</span>' : '' ) . '</label> ' .
+				'email'  => '<div class="comment-form-email form-group"><label for="email">' . __( 'Email', 'morfeu' ) . ( $req ? ' <span class="required text-danger">*</span>' : '' ) . '</label> ' .
 				            '<input id="email" name="email" class="form-control" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></div>'
 			);
 			comment_form( array(

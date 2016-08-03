@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odin v2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-26 23:55-0300\n"
-"PO-Revision-Date: 2016-06-26 23:56-0300\n"
+"POT-Creation-Date: 2016-08-03 18:10-0300\n"
+"PO-Revision-Date: 2016-08-03 18:11-0300\n"
 "Last-Translator: Rafael Funchal <rafaelfunchal@gmail.com>\n"
 "Language-Team: WordPress Brasil Group\n"
 "Language: Portuguese\n"
@@ -107,7 +107,7 @@ msgstr "Nome"
 
 # @ odin
 #: ../comments.php:52
-msgid "E-mail"
+msgid "Email"
 msgstr "E-mail"
 
 # @ odin
@@ -142,7 +142,7 @@ msgid "Toggle navigation"
 msgstr "Alternar navegação"
 
 # @ odin
-#: ../header.php:64
+#: ../header.php:53
 msgid "Skip to content"
 msgstr "Pular para o conteúdo"
 
@@ -163,22 +163,14 @@ msgid "Main Menu"
 msgstr "Menu Principal"
 
 # @ odin
-#: ../functions.php:107
+#: ../functions.php:112
 msgid "Main Sidebar"
 msgstr "Sidebar Principal"
 
 # @ odin
-#: ../functions.php:109
+#: ../functions.php:114
 msgid "Site Main Sidebar"
 msgstr "Sidebar principal do site"
-
-#: ../functions.php:168 ../functions.php:176
-msgid "Logo"
-msgstr "Logo"
-
-#: ../functions.php:170
-msgid "Upload a logo to replace the default site name in the header"
-msgstr "Envie uma logo para substituir o nome padão do site no cabeçalho"
 
 # @ odin
 #: ../image.php:13
@@ -233,7 +225,7 @@ msgid "Tags: "
 msgstr "Tags: "
 
 # @ odin
-#: ../search.php:7
+#: ../search.php:5
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Resultado de Busca por: %s"
@@ -344,6 +336,12 @@ msgstr "Destacado"
 #: ../inc/template-tags.php:64
 msgid "By"
 msgstr "Por"
+
+#~ msgid "Logo"
+#~ msgstr "Logo"
+
+#~ msgid "Upload a logo to replace the default site name in the header"
+#~ msgstr "Envie uma logo para substituir o nome padão do site no cabeçalho"
 
 # @ odin
 #~ msgid "Latest posts"

@@ -79,6 +79,19 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		indent: {
+			stylesheets: {
+				src: [
+					'../style.css'
+				],
+				dest: '../',
+				options: {
+					style: 'tab',
+					size: 4
+				}
+			}
+		},
+
 		// watch for changes and trigger sass, jshint, uglify and livereload browser
 		watch: {
 			sass: {
@@ -313,6 +326,8 @@ module.exports = function( grunt ) {
 		}
 
 	};
+
+	grunt.loadNpmTasks('grunt-indent');
 
 	// Initialize Grunt Config
 	// --------------------------
